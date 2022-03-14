@@ -2,6 +2,10 @@
 
 **SakuraLife - Full FiveM Server Source**
 
-**Sprache : Deutsch**
- **ESX Version : 1.1**
-**SQL Enthalten : JA**
+Server use ES_Extended 1.1
+
+Credits also go to https://github.com/oxince for his Bloodline V1 Build
+
+Here you will be offered a complete server incl. ready EUP & Addon cars, name is welcome. 
+
+Support is available via Discord: discord.gg/Scudrah
