@@ -1,0 +1,121 @@
+@import url('http://fonts.cdnfonts.com/css/metropolis-2');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+}
+
+.menu {
+	background-color: rgba(0, 0, 0, 0.66);
+	border-radius: 0px;
+	font-family: 'Poppins', sans-serif;
+	min-width: 400px;
+	position: absolute;
+	border-radius: 10px;
+}
+
+
+.menuname {
+	position: absolute;
+	height: 40px;
+	width: 400px;
+	background-color: #db2a91;
+	color: rgb(246, 246, 246);
+	text-transform: uppercase;
+	margin-top: 200px;
+}
+
+
+.arrow {
+	height: 32px;
+	width: 32px;
+	position: absolute;
+	right: 30px;
+}
+
+.menu.align-left {
+	left: 40;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.menu.align-top-left {
+	left: 40;
+	top: 40;
+}
+
+.menu.align-top {
+	left: 50%;
+	top: 40;
+	transform: translate(-50%, 0);
+}
+
+.menu.align-top-right {
+	left: 40;
+	top: 40;
+}
+
+.menu.align-right {
+	left: 40;
+	top: 50%;
+	transform: translate(0, -50%);
+}
+
+.menu.align-bottom-right {
+	left: 40;
+	top: 40;
+}
+
+.menu.align-bottom {
+	left: 50%;
+	top: 40;
+	transform: translate(-50%, 0);
+}
+
+.menu.align-bottom-left {
+	left: 40;
+	bottom: 40;
+}
+
+.menu.align-center {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.menu .head {
+	background-image: url('https://media.discordapp.net/attachments/918096952502157353/920131891544358932/sakuralife_discordbanner.png?width=1202&height=676');
+	background-repeat: no-repeat;
+	background-size: 400px 220px;
+	background-position-x: 0px;
+	text-align: center;
+	height: 260px;
+	line-height: 40px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	padding-bottom: 5px;
+}
+
+.menu .menu-items {
+	max-height: 600px;
+	overflow-y: hidden;
+}
+
+.menu-items .menu-item {
+	height: 40px;
+	display: block;
+	margin-left: 10px;
+
+	background-color: rgba(0, 0, 0);
+	box-shadow: inset 1px 0px 0px 1px rgba(0, 0, 0, 0.6);
+	height: 32px;
+	line-height: 32px;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	margin-bottom: 10px;
+	border-radius: 5px 5px 5px 5px;
+	max-width: 380px;
+}
+
+.menu .menu-items .menu-item.selected {
+	background-color: #db2a91;
+}

@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Job Creator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+
+	<!-- Script CSS -->
+	<link href="index.css" rel="stylesheet" type="text/css" />
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+	<!-- jQuery, then bootsrap, then popper -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+		integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+		integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+		crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color: transparent !important;">
+	<div id="job-creator" class="big-container container">
+
+		<div id="main-bar" class="container">
+			<p id="job-creator-label" class="main-text">Job Creator</p>
+
+			<div class="mt-5 float-end btn-group" role="group">
+				<button id="public-markers-btn" type="button" class="btn btn-secondary mx-1">Public markers</button>
+				<button id="refresh-esx-btn" type="button" class="btn btn-info mx-1">Refresh ESX jobs</button>
+				<button id="create-job-btn" type="button" class="btn btn-primary mx-1">Create job</button>
+			</div>
+
+			<button id="close-main-btn" type="button" class="close-page-btn btn-close btn-close-white ml-2"
+				aria-label="Close"></button>
+		</div>
+
+
+		<!-- Jobs container -->
+		<div id="jobs-container" class="content-container container"></div>
+	</div>
+
+	<!-- Modal Delete Dialog -->
+	<div class="modal fade" id="delete-dialog-modal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 1070;">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Delete</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+
+				<div class="modal-body"></div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="delete-dialog-confirm" type="button" class="btn btn-danger">Delete</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Edit Marker generic -->
+	<div class="modal fade" id="edit-marker-dialog-modal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 1070;">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<form id="edit-marker-form" class="modal-content needs-validation" novalidate>
+				<div class="modal-header">
+					<h5 class="modal-title">Edit marker</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+
+				<div class="modal-body">
+					<div class="form-floating my-3">
+						<input type="text" class="form-control" id="edit-marker-label" placeholder="Label" required>
+						<label for="edit-marker-label">Label</label>
+					</div>
+
+					<div class="form-floating my-2">
+						<input type="number" class="form-control" id="edit-marker-type" value="1" required>
+						<label for="marker-type">Marker Type</label>
+					</div>
+
+					<table class="table">
+						<thead>
+						  <tr>
+							<th scope="col">Scale X</th>
+							<th scope="col">Scale Y</th>
+							<th scope="col">Scale Z</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td>
+								<input type="number" step="0.1" class="form-control" id="edit-marker-scale-x" placeholder="x" value="1.5" required>
+							</td>
+							<td>
+								<input type="number" step="0.1" class="form-control" id="edit-marker-scale-y" placeholder="y" value="1.5" required>
+							</td>
+							<td>
+								<input type="number" step="0.1" class="form-control" id="edit-marker-scale-z" placeholder="z" value="0.5" required>
+							</td>
+						  </tr>
+						</tbody>
+					</table>
+					
+					<div class="row my-3 ">
+						<div class="col">
+							<label for="marker-color" class="form-label mt-1">Marker color</label>
+							<input type="color" class="form-control form-control-color" id="edit-marker-color" value="#563d7c" title="What color to use for the marker?">			  
+						</div>
+					
+						<div class="col">
+							<label for="marker-alpha" class="form-label mt-1">Marker opacity</label>
+							<input type="range" class="form-range" id="edit-marker-alpha" min="1" max="255" step="1" value="50">	
+						</div>
+					</div>
+
+					<div class="form-check form-switch fs-4 mt-4">
+						<input class="form-check-input" type="checkbox" id="edit-marker-map-blip">
+						<label class="form-check-label" for="edit-marker-map-blip">Map blip</label>
+					</div>
+
+					<table id="blip-data" class="table">
+						<thead>
+						  <tr>
+							<th scope="col">Blip sprite ID</th>
+							<th scope="col">Blip color ID</th>
+							<th scope="col">Blip scale</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td>
+								<input type="number" class="form-control" id="edit-marker-sprite-id" placeholder="Blip sprite ID">
+							</td>
+							<td>
+								<input type="number" class="form-control" id="edit-marker-blip-color" placeholder="Blip color ID">
+							</td>
+							<td>
+								<input type="number" step="0.1" class="form-control" id="edit-marker-blip-scale" placeholder="Blip scale">
+							</td>
+						  </tr>
+						</tbody>
+					</table>
+
+					<div class="form-check form-switch fs-4 mt-4">
+						<input class="form-check-input" type="checkbox" id="edit-marker-npc">
+						<label class="form-check-label" for="edit-marker-npc">Standing NPC</label>
+					</div>
+
+					<div id="edit-marker-npc-model-div">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Model" id="edit-marker-npc-model">
+							<input type="number" class="form-control" placeholder="Heading" id="edit-marker-npc-heading">
+						</div>
+
+						<button id="edit-marker-current-heading-btn" type="button" class="btn btn-secondary mt-2 float-end">Current heading</button>
+					</div>
+
+					<table class="table">
+						<thead>
+						  <tr>
+							<th scope="col">Coord X</th>
+							<th scope="col">Coord Y</th>
+							<th scope="col">Coord Z</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td>
+								<input type="number" class="form-control" id="edit-marker-coord-x" placeholder="Coord X" step="0.00001" required>
+							</td>
+							<td>
+								<input type="number" class="form-control" id="edit-marker-coord-y" placeholder="Coord Y" step="0.00001" required>
+							</td>
+							<td>
+								<input type="number" class="form-control" id="edit-marker-coord-z" placeholder="Coord Z" step="0.00001" required>
+							</td>
+						  </tr>
+						</tbody>
+					</table>
+					<button id="edit-marker-current-coords-btn" type="button" class="btn btn-success mb-4">Current coords</button>
+
+
+					<div id="edit-marker-min-grade-form" class="form-floating mb-5">
+						<input type="number" class="form-control" id="edit-marker-min-grade" placeholder="Minimum Grade" required>
+						<label for="edit-marker-min-grade">Minimum Grade</label>
+					</div>
+
+					<div>
+						<button id="edit-marker-options" type="button" class="btn btn-info">Marker Options</button>
+						<button id="delete-marker-btn" type="button" class="btn btn-danger">Delete Marker</button>
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="edit-marker-dialog-confirm" type="submit" class="btn btn-primary">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<!-- Input Text Dialog -->
+	<div class="modal fade" id="input-text-dialog-modal" tabindex="-1" role="dialog"
+		aria-labelledby="input-text-dialog-title" aria-hidden="true" style="z-index: 1070;">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="input-text-dialog-title"></h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form></form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="input-text-dialog-confirm" type="button" class="btn btn-primary">Confirm</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Garage Data Modal -->
+	<div class="modal fade" id="garage-data-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="input-group">
+						<span class="input-group-text">Vehicle Spawnpoint</span>
+						<input id="marker-data-spawnpoint-x" type="text" aria-label="X" class="form-control"
+							placeholder="X">
+						<input id="marker-data-spawnpoint-y" type="text" aria-label="Y" class="form-control"
+							placeholder="Y">
+						<input id="marker-data-spawnpoint-z" type="text" aria-label="Z" class="form-control"
+							placeholder="Z">
+					</div>
+
+					<div class="input-group mt-3">
+						<span class="input-group-text">Spawnpoint heading</span>
+						<input id="marker-data-heading" type="text" aria-label="Heading" class="form-control"
+							placeholder="Heading">
+					</div>
+
+					<button id="markers-data-current-coords" class="btn btn-success mt-2 mb-5" type="button"
+						data-bs-toggle="tooltip" data-bs-placement="right" title="Do this when inside a vehicle">Current
+						coords and heading</button>
+
+					<table class="table">
+						<thead>
+						  <tr>
+							<th scope="col" class="text-center">Vehicle Model</th>
+							<th scope="col" class="text-center">Vehicle Name</th>
+							<th scope="col">Primary Color</th>
+							<th scope="col">Secondary Color</th>
+							<th scope="col" class="text-center">Delete</th>
+						  </tr>
+						</thead>
+						<tbody id="garage-data-model-tbody">
+
+						</tbody>
+					  </table>
+
+					<div class="input-group mt-1">
+						<span class="input-group-text">New vehicle model</span>
+						<input id="marker-data-vehicle-model" type="text" aria-label="Vehicle model"
+							class="form-control" placeholder="Vehicle Model">
+						<div class="invalid-feedback">Can't be empty</div>
+					</div>
+
+					<button id="marker-data-add-vehicle" class="btn btn-info mt-2" type="button">Add vehicle</button>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="garage-data-modal-confirm" type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Boss Data Modal -->
+	<div id="boss-data-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="form-check form-switch fs-4 mb-2">
+						<input class="form-check-input" type="checkbox" id="boss-data-washmoney">
+						<label class="form-check-label" for="boss-data-washmoney">Can wash money?</label>
+					</div>
+
+					<div id="boss-data-washmoney-data" class="mb-5">
+						<div class="input-group">
+							<span class="input-group-text" >Return percentage after wash</span>
+							<input id="boss-data-washmoney-percentage" type="number" class="form-control" placeholder="80">
+						</div>
+
+						<div class="form-check form-switch fs-5 mt-1">
+							<input id="boss-data-washmoney-to-society-account" class="form-check-input" type="checkbox">
+							<label class="form-check-label">Add money to society account</label>
+						</div>
+					</div>
+
+					<div class="form-check form-switch fs-4 mb-2">
+						<input class="form-check-input" type="checkbox" id="boss-data-withdraw">
+						<label class="form-check-label" for="boss-data-withdraw">Can withdraw money?</label>
+					</div>
+					<div class="form-check form-switch fs-4 mb-2">
+						<input class="form-check-input" type="checkbox" id="boss-data-deposit">
+						<label class="form-check-label" for="boss-data-deposit">Can deposit money?</label>
+					</div>
+					<div class="form-check form-switch fs-4 mb-2">
+						<input class="form-check-input" type="checkbox" id="boss-data-employees">
+						<label class="form-check-label" for="boss-data-employees">Can manage employees?</label>
+					</div>
+					<div class="form-check form-switch fs-4 mb-2">
+						<input class="form-check-input" type="checkbox" id="boss-data-grades">
+						<label class="form-check-label" for="boss-data-grades">Can manage wages/grades?</label>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="boss-data-modal-confirm" type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Shop Data Modal -->
+	<div id="shop-data-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="input-group mb-3">
+						<input id="shop-data-item-id" type="text" class="form-control" placeholder="Item id">
+						<span class="input-group-text">$</span>
+						<input id="shop-data-item-price" type="number" class="form-control" placeholder="Item price">
+						<button id="shop-data-add-btn" type="button" class="btn btn-success">Add to shop</button>
+					</div>
+
+					<table class="table">
+						<thead>
+							<tr class="text-center">
+								<th class="col">Item ID</th>
+								<th class="col">Item Price</th>
+								<th class="col">Black money</th>
+								<th class="col">Remove item</th>
+							</tr>
+						</thead>
+						<tbody id="shop-data-items-container">
+
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="shop-data-modal-confirm" type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Garage Buyable Modal -->
+	<div class="modal fade" id="garage-buyable-data-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="input-group">
+						<span class="input-group-text">Vehicle Spawnpoint</span>
+						<input id="garage-buyable-spawnpoint-x" type="text" aria-label="X" class="form-control"
+							placeholder="X">
+						<input id="garage-buyable-spawnpoint-y" type="text" aria-label="Y" class="form-control"
+							placeholder="Y">
+						<input id="garage-buyable-spawnpoint-z" type="text" aria-label="Z" class="form-control"
+							placeholder="Z">
+					</div>
+
+					<div class="input-group mt-3">
+						<span class="input-group-text">Spawnpoint heading</span>
+						<input id="garage-buyable-heading" type="text" aria-label="Heading" class="form-control"
+							placeholder="Heading">
+					</div>
+
+					<button id="garage-buyable-current-coords" class="btn btn-success mt-2 mb-5" type="button">Current
+						coords and heading</button>
+
+					<div id="garage-buyable-vehicles" class="container"></div>
+
+					<div class="input-group mt-1">
+						<span class="input-group-text">New vehicle model</span>
+						<input id="garage-buyable-vehicle-model" type="text" class="form-control"
+							placeholder="Vehicle Model">
+						<span class="input-group-text">$</span>
+						<input id="garage-buyable-vehicle-price" type="number" class="form-control" placeholder="Price">
+					</div>
+
+					<button id="garage-buyable-add-vehicle" class="btn btn-info mt-2" type="button">Add vehicle</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="garage-buyable-modal-confirm" type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Garage Owned Modal -->
+	<div class="modal fade" id="garage-owned-data-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<form id="garage-owned-data-form" class="modal-content needs-validation" novalidate>
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="input-group mt-2">
+						<span class="input-group-text">Vehicle Spawnpoint</span>
+						<input id="garage-owned-spawnpoint-x" type="number" step="0.01" aria-label="X" class="form-control"
+							placeholder="X" required>
+						<input id="garage-owned-spawnpoint-y" type="number" step="0.01" aria-label="Y" class="form-control"
+							placeholder="Y" required>
+						<input id="garage-owned-spawnpoint-z" type="number" step="0.01" aria-label="Z" class="form-control"
+							placeholder="Z" required>
+					</div>
+
+					<div class="input-group mt-3">
+						<span class="input-group-text">Spawnpoint heading</span>
+						<input id="garage-owned-heading" type="number" step="0.01" aria-label="Heading" class="form-control"
+							placeholder="Heading" required>
+					</div>
+
+					<button id="garage-owned-current-coords" class="btn btn-success my-2" type="button">Current coords and heading</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="garage-owned-modal-confirm" type="submit" class="btn btn-primary">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- Crafting table Modal -->
+	<div class="modal fade" id="crafting-table-data-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div id="craftables">
+
+					</div>
+
+					<button id="crafting-table-new-craft-btn" type="button"
+						class="btn btn-primary mt-4 float-end">Create new craft</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="crafting-table-modal-confirm" type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Progress bar -->
+	<div class="progress col-4 offset-4 position-absolute bottom-0 mb-5" style="height: 40px; display: none;">
+		<div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-info fs-4"
+			role="progressbar" style="width: 0%"></div>
+	</div>
+
+	<!-- Armory Modal -->
+	<div class="modal fade" id="armory-data-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="form-check form-switch fs-4">
+						<input class="form-check-input" type="checkbox" id="armory-is-shared">
+						<label class="form-check-label" for="armory-is-shared">Is armory shared?</label>
+					</div>
+
+					<div class="form-check form-switch fs-4">
+						<input class="form-check-input" type="checkbox" id="armory-refill-on-take">
+						<label class="form-check-label" for="armory-refill-on-take">Max ammo when take?</label>
+					</div>
+
+					<button type="button" class="btn btn-danger mt-4" id="delete-armory-content">Delete armory
+						content</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="armory-modal-confirm" type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Job outfit -->
+	<div class="modal fade" id="job-outfit-data-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+
+					<div id="job-outfit-outfits">
+						
+					</div>
+
+					<button type="button" id="job-outfit-new-outfit-btn" class="btn btn-success mt-3 float-end">Create new outfit</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="job-outfit-modal-confirm" type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Teleport -->
+	<div class="modal fade" id="teleport-data-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p class="text-center fs-3">Teleport to</p>
+
+					<div class="input-group mb-3 col-6">
+						<span class="input-group-text">x</span>
+						<input type="text" class="form-control" id="teleport-x">
+					</div>
+
+					<div class="input-group mb-3 col-6">
+						<span class="input-group-text">y</span>
+						<input type="text" class="form-control" id="teleport-y">
+					</div>
+
+					<div class="input-group mb-3 col-6">
+						<span class="input-group-text">z</span>
+						<input type="text" class="form-control" id="teleport-z">
+					</div>
+
+					<button type="button" class="btn btn-success" id="teleport-current-coords-btn">Current coords</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="teleport-modal-confirm" type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Notification -->
+	<div id="notification-modal" class="modal" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Notification</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p id="notification-message">message</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Not allowed Menu -->
+	<div class="container border border-danger rounded" id="not-allowed-container">
+		<button id="close-btn-not-allowed-menu" type="button" class="btn-close btn-close-white float-end mt-2"></button>
+
+		<p class="text-center fs-2 mt-2">You are not allowed to use this menu</p>
+		<p class="text-center fs-2">If you are a server admin, you need to add ACE permission to your server.cfg</p>
+
+		<div class="container mt-5">
+			<p class="font-monospace" id="not-allowed-ace">
+				add_ace group.admin jobcreator allow # Add permission to group
+			</p>
+			<p class="font-monospace" id="not-allowed-steamid">
+				# Can also be identifier.steam:steamid
+			</p>
+			<p class="font-monospace" id="not-allowed-license">
+				add_principal identifier.license:YourRockstarLicense group.admin # Add player to the group
+			</p>
+		</div>
+	</div>
+
+	<!-- Market Modal -->
+	<div class="modal fade" id="market-data-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+							  <th scope="col">Item ID</th>
+							  <td>Item Price</th>
+							  <td>Black money?</th>
+							  <td>Remove</th>
+							</tr>
+						</thead>
+						<tbody id="market-modal-items-tbody">
+
+						</tbody>
+					</table>
+
+					<div class="input-group mt-3">
+						<input type="text" class="form-control" id="market-modal-new-item-name-input" placeholder="Item ID">
+						<input type="number" class="form-control" id="market-modal-new-item-price-input" placeholder="Item Price">
+						<button class="btn btn-success" type="button" id="market-modal-new-item-btn">Add item</button>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="market-modal-confirm" type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+	<!-- Harvest Modal -->
+	<div class="modal fade" id="harvest-data-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<form id="harvest-modal-form" class="modal-content needs-validation" novalidate>
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div id="harvest-modal-items">
+
+					</div>
+
+					<div class="form-check form-switch mt-4 fs-5">
+						<input class="form-check-input" type="checkbox" id="harvest-item-requires-tool">
+						<label class="form-check-label" for="harvest-item-requires-tool">Requires a tool?</label>
+					</div>
+
+					<div id="harvest-item-tool-div" class="mt-1" style="display: none;">
+						<div class="input-group mt-1">
+							<span class="input-group-text">Tool to harvest</span>
+							<input id="harvest-item-tool" type="text" class="form-control" placeholder="pickaxe">
+						</div>
+
+						<div class="form-check form-switch mt-2 fs-5">
+							<input class="form-check-input" type="checkbox" id="harvest-item-tool-lose-on-use">
+							<label class="form-check-label" for="harvest-item-tool-lose-on-use">Lose on use</label>
+						</div>
+
+						<div id="harvest-item-lose-quantity-div" class="input-group mt-1" style="display: none;">
+							<span class="input-group-text">Quantity to lose</span>
+							<input id="harvest-item-tool-lose-quantity" type="number" class="form-control" placeholder="1">
+						</div>
+					</div>
+
+					<button id="harvest-animations-btn" type="button" class="btn btn-secondary mt-3">Animations</button>
+					<button id="harvest-add-item-btn" type="button" class="btn btn-primary mt-3">Add item</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="harvest-modal-confirm" type="submit" class="btn btn-success">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<!-- Process Modal -->
+	<div class="modal fade" id="process-data-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<form id="process-modal-form" class="modal-content needs-validation" novalidate>
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="input-group">
+						<span class="input-group-text">Remove item</span>
+						<input id="item-to-remove-name" type="text" class="form-control" placeholder="Item name" required>
+						<input id="item-to-remove-quantity" type="number" class="form-control" placeholder="Quantity" required>
+					</div>
+
+					<div class="input-group mt-2">
+						<span class="input-group-text">Give item</span>
+						<input id="item-to-add-name" type="text" class="form-control" placeholder="Item name" required>
+						<input id="item-to-add-quantity" type="number" class="form-control" placeholder="Quantity" required>
+					</div>
+
+					<div class="input-group mt-3">
+						<span class="input-group-text">Time to process</span>
+						<input id="process-time" type="number" class="form-control" placeholder="Seconds" required>
+					</div>
+
+					<button id="process-animations-btn" type="button" class="btn btn-secondary mt-3">Animations</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="process-modal-confirm" type="submit" class="btn btn-primary">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<!-- Animations Modal -->
+	<div class="modal fade" id="animations-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<form id="animations-modal-form" class="modal-content needs-validation" novalidate>
+				<div class="modal-header">
+					<h5 class="modal-title">Animations</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div id="animations"></div>
+
+					<button id="add-animation-btn" type="button" class="btn btn-secondary mt-3">Add animation</button>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="animations-modal-confirm" type="submit" class="btn btn-primary">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<!-- Weapon Upgrader Modal -->
+	<div class="modal fade" id="weapon-upgrader-data-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+
+					<div id="weapon-upgrader-components">
+						<p class="text-center fs-4">Components Prices</p>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Extended Clip</span>
+							<input type="number" class="form-control" data-componentname="clip_extended" placeholder="Component Price (empty to disable)" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Drum Clip</span>
+							<input type="number" class="form-control" data-componentname="clip_drum" placeholder="Component Price (empty to disable)" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Flashlight</span>
+							<input type="number" class="form-control" data-componentname="flashlight" placeholder="Component Price (empty to disable)" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Suppressor</span>
+							<input type="number" class="form-control" data-componentname="suppressor" placeholder="Component Price (empty to disable)" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Scope</span>
+							<input type="number" class="form-control" data-componentname="scope" placeholder="Component Price (empty to disable)" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Advanced Scope</span>
+							<input type="number" class="form-control" data-componentname="scope_advanced" placeholder="Component Price (empty to disable)" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Grip</span>
+							<input type="number" class="form-control" data-componentname="grip" placeholder="Component Price (empty to disable)" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Box Clip</span>
+							<input type="number" class="form-control" data-componentname="clip_box" placeholder="Component Price (empty to disable)" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Luxary Finish</span>
+							<input type="number" class="form-control" data-componentname="luxary_finish" placeholder="Component Price (empty to disable)" value="500">
+						</div>
+					</div>
+					
+					<div id="weapon-upgrader-tints">
+						<p class="text-center fs-4">Tints Prices</p>
+	
+						<div class="input-group mt-3">
+							<span class="input-group-text">Default tint</span>
+							<input type="number" class="form-control" data-tintid="0" placeholder="Tint Price" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Green tint</span>
+							<input type="number" class="form-control" data-tintid="1" placeholder="Tint Price" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Gold tint</span>
+							<input type="number" class="form-control" data-tintid="2" placeholder="Tint Price" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Pink tint</span>
+							<input type="number" class="form-control" data-tintid="3" placeholder="Tint Price" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Army tint</span>
+							<input type="number" class="form-control" data-tintid="4" placeholder="Tint Price" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">LSPD tint</span>
+							<input type="number" class="form-control" data-tintid="5" placeholder="Tint Price" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Orange tint</span>
+							<input type="number" class="form-control" data-tintid="6" placeholder="Tint Price" value="500">
+						</div>
+						<div class="input-group mt-3">
+							<span class="input-group-text">Platinum tint</span>
+							<input type="number" class="form-control" data-tintid="7" placeholder="Tint Price" value="500">
+						</div>
+					</div>	
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="weapon-upgrader-modal-confirm" type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+	<!-- Job Shop Modal -->
+	<div class="modal fade" id="job-shop-data-modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">Marker Data</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p class="text-center fs-4">Job that can put on sale items</p>
+
+					<select class="form-select mt-3" id="job-shop-all-jobs">
+						<option selected value=null>Allowed job to sell</option>
+					</select>
+
+					<select class="form-select mt-3" id="job-shop-all-ranks">
+						<option selected value=null>Minimum grade allowed to sell</option>
+					</select>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button id="job-shop-modal-confirm" type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+	<!-- Job Markers -->
+	<div id="job-markers" class="big-container container">
+		<div id="markers-main-bar" class="container">
+			<p id="job-markers-label" class="main-text">Markers</p>
+
+			<div id="markers-main-buttons-group" class="mt-5 float-end btn-group" role="group">
+				<button id="create-marker-btn" type="button" class="btn btn-success mx-1">Create Marker</button>
+			</div>
+
+			<button id="close-markers-btn" type="button" class="close-page-btn btn-close btn-close-white ml-2"
+				aria-label="Close"></button>
+		</div>
+
+
+		<!-- Markers container -->
+		<div id="markers-container" class="content-container container">
+			<table class="table table-dark table-bordered border-danger text-center fs-5 table-striped">
+				<thead>
+					<tr id="main-markers-row">
+
+					</tr>
+				</thead>
+				<tbody id="markers-content">
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div id="job-creator-progressbar-div" class="progress col-4 offset-4 fixed-bottom mb-5 border border-3 border-dark rounded-pill" style="height: 40px; display: none">
+        <div id="job-creator-progressbar" class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width:0%; height: 40px;"></div>
+
+        <p id="job-creator-progressbar-text" class="justify-content-center d-flex position-absolute top-50 start-50 translate-middle fw-bold fs-5">Test</p>
+    </div>
+
+	<script src="index.js"></script>
+</body>
+
+</html>

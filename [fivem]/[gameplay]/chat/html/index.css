@@ -1,0 +1,110 @@
+.color-0 {
+	color: #ffffff;
+}
+.color-1 {
+	color: #ff4444;
+}
+.color-2 {
+    color: #99cc00;
+}
+.color-3 {
+    color: #ffbb33;
+}
+.color-4 {
+    color: #0099cc;
+}
+.color-5 {
+    color: #33b5e5;
+}
+.color-6 {
+    color: #aa66cc;
+}
+.color-8 {
+    color: #ff0000;
+}
+.color-9 {
+    color: #cc0068;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+body {
+    height: 100vh;
+	width: 100vw;
+    overflow: hidden;
+}
+
+.no-grow {
+	flex-grow: 0;
+}
+
+em {
+    font-style: normal;
+}
+
+#app {
+    font-family: "Poppins", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	color: rgba(255, 255, 255, 0.315);
+}
+
+.chat-input {
+    font-size: 1.65vh;
+	position: absolute;
+    
+	left: 1713px;
+    top: 125px;
+	max-width: 1000px;
+    overflow: hidden;
+}
+
+.prefix {
+    font-size: 1.8vh;
+	position: absolute;
+	margin-top: 0.5%;
+	margin-left: -5px;
+	left: 0.208%;
+    overflow: hidden;
+}
+
+::placeholder {
+	opacity: 1; /* Firefox */
+}
+
+textarea {
+    font-size: 1.65vh;
+	display: block;
+	padding: 0.5%;
+    text-transform: none;
+    text-align: center;
+    color: #ffffff;
+	background-color: rgba(0, 0, 0, 0.764);
+	border: 0px solid rgb(255, 255, 255);
+	/*border-left: 3px solid red;*/
+	border-radius: 5px;
+	outline: none;
+	width: 10.2vw;
+	opacity: 0.764;
+    height: 32px;
+	overflow: hidden;
+	margin: 1vh 0 0 1vh;
+}
+
+textarea:focus,
+input:focus {
+	outline: none;
+}
+
+.msg {
+	top: 10px;
+}
+
+.hidden {
+	display: none;
+}

@@ -1,0 +1,403 @@
+*,
+:after,
+:before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0
+}
+
+:root {
+	--var-pricecolor: #ffffff;
+	--amount-color: #00aeff
+}
+
+body {
+	font-family: Poppins;
+	overflow: hidden;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.shop--main {
+	width: 93.9vh;
+	height: 55.3vh;
+	background: radial-gradient(150vh circle at 0 -60%, #a7426a, #050505);
+	border-radius: 1vh;
+	opacity: 1
+}
+
+.shop--main,
+.shop--main p {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+	overflow: hidden
+}
+
+.shop--main p {
+	font-size: 42vh;
+	text-transform: uppercase;
+	color: transparent;
+	-webkit-text-stroke-width: .1vh;
+	-webkit-text-stroke-color: #ff0066;
+	opacity: .05
+}
+
+.shop--header {
+	width: 100%;
+	height: 7.4vh;
+	background-color: rgba(255, 0, 0, 0)
+}
+
+.shop--header,
+.shop--header .text {
+	position: relative;
+	display: flex;
+	align-items: center
+}
+
+.shop--header .text {
+	justify-content: center;
+	width: 10vh;
+	margin-left: 2.6vh
+}
+
+.text .circle {
+	position: relative;
+	width: 1vh;
+	height: 1vh;
+	background-color: #ff0066;
+	border-radius: 100%
+}
+
+.text h1 {
+	position: relative;
+	color: #ffffff;
+	font-size: 1.6vh;
+	left: .9vh;
+	font-weight: 600
+}
+
+.shop--categorys {
+	width: 56vh;
+	height: 100%;
+	margin-left: 2.2vh
+}
+
+.shop--categorys,
+.shop--categorys .category {
+	position: relative;
+	display: flex;
+	align-items: center
+}
+
+.shop--categorys .category {
+	background-color: #ff0066
+}
+
+.shop--categorys .category,
+.shop--categorys .categoryselected {
+	justify-content: center;
+	width: 13.1vh;
+	height: 2.7vh;
+	border-radius: .4vh;
+	margin-right: 1.2vh;
+	cursor: pointer;
+	border: .1vh solid rgba(255, 255, 255, 0.129);
+	color: rgba(255, 255, 255, 0.651);
+	text-transform: uppercase;
+	font-size: 1.1vh;
+	transition: .2s
+}
+
+.shop--categorys .categoryselected {
+	background-color: #ff006642;
+}
+
+.shop--categorys .categoryselected,
+.shop--search {
+	position: relative;
+	display: flex;
+	align-items: center
+}
+
+.shop--search {
+	justify-content: center;
+	width: 13.1vh;
+	height: 2.7vh;
+	background-color: rgba(3, 39, 57, .11764705882352941);
+	border-radius: .4vh;
+	border: .1vh solid rgb(255, 255, 255);
+	text-transform: uppercase;
+	font-size: 1.1vh;
+	left: 2vh
+}
+
+.shop--search,
+.shop--search input {
+	color: #ffffff
+}
+
+.shop--search input {
+	background-color: transparent;
+	border: transparent;
+	width: 79%;
+	margin-left: .5vh;
+	outline: none
+}
+
+.close {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: auto;
+	margin-bottom: auto;
+	right: 1.8vh;
+	top: 1.8vh;
+	background-color: #ff0066;
+	border-radius: 100%;
+	width: 1.5vh;
+	height: 1.5vh;
+	cursor: pointer
+}
+
+.close i {
+	font-size: 1vh
+}
+
+.shop--other {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 100%
+}
+
+.shop--items {
+	position: relative;
+	width: 43.5vh;
+	height: 43vh;
+	margin-top: 1.1vh;
+	margin-left: 4.2vh;
+	overflow: scroll;
+	overflow-x: hidden
+}
+
+.shop--items .auto {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-gap: 1.6vh 1.2vh;
+	width: 42.2vh;
+	height: 43vh
+}
+
+.item {
+	width: 13vh;
+	height: 13vh;
+	background: radial-gradient(150vh circle at 0 -60%, #ff0066, #050505);
+	top: .1vh;
+	left: .1vh;
+	border-radius: 1vh;
+	border: .1vh solid #00aeff;
+	cursor: pointer
+}
+
+.item,
+.item img {
+	position: relative
+}
+
+.item img {
+	transform: translate(-50%);
+	left: 50%;
+	width: 5vh;
+	height: auto;
+	margin-top: 2vh
+}
+
+.item h1 {
+	font-size: 1.4vh;
+	color: #ff0066
+}
+
+.item h1,
+.item h2 {
+	position: relative;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: 400
+}
+
+.item h2 {
+	font-size: 1.1vh;
+	color: #fff
+}
+
+.shop--warenkorb {
+	position: relative;
+	width: 38vh;
+	height: 43vh;
+	background-color: rgba(0, 0, 0, .329);
+	border: .1vh solid #262a2c;
+	margin-top: 1.1vh;
+	margin-left: 4.1vh;
+	border-radius: 1vh
+}
+
+.shop--warenkorb h1 {
+	position: relative;
+	text-align: center;
+	font-size: 1.4vh;
+	color: #ff0066;
+	margin-top: 1.5vh;
+	font-weight: 500
+}
+
+.warenkorb--items {
+	position: relative;
+	transform: translate(-50%);
+	left: 50%;
+	width: 32vh;
+	height: 28vh;
+	margin-top: 2vh;
+	overflow: scroll;
+	overflow-x: hidden
+}
+
+.warenkorb--items .auto {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	grid-gap: 1vh;
+	width: 30vh
+}
+
+.warenkorb--item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 3.5vh;
+	background-color: rgba(0, 0, 0, .295);
+	border-radius: .5vh
+}
+
+.warenkorb--item img {
+	height: 2vh;
+	width: auto;
+	margin-left: 2vh
+}
+
+.warenkorb--item h2 {
+	position: relative;
+	margin-left: 1.5vh;
+	color: #ffffff;
+	font-size: 1.1vh;
+	font-weight: 400;
+	text-transform: uppercase;
+	overflow: hidden;
+	white-space: nowrap
+}
+
+.warenkorb--item i {
+	margin-right: 1.4vh;
+	color: #ffffff;
+	cursor: pointer;
+	font-size: 1.4vh
+}
+
+.remove {
+	margin-left: auto;
+	right: 1.3vh;
+	width: 2.4vh;
+	height: 2.4vh;
+	background-color: #ff0066;
+	border-radius: .5vh;
+	color: #fff;
+	font-size: 1.2vh;
+	cursor: pointer
+}
+
+.buttons,
+.remove {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
+
+.buttons {
+	margin-top: 1.3vh
+}
+
+.buttons button {
+	text-transform: uppercase;
+	width: 15vh;
+	height: 2.5vh;
+	margin-left: 1vh;
+	margin-right: 1vh;
+	color: #fff;
+	background-color: #ff0066;
+	border: none;
+	outline: none;
+	border-radius: .5vh;
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 1.1vh
+}
+
+@-webkit-keyframes opacity-fade-in {
+	0% {
+		opacity: 0
+	}
+	to {
+		opacity: 1
+	}
+}
+
+@keyframes opacity-fade-in {
+	0% {
+		opacity: 0
+	}
+	to {
+		opacity: 1
+	}
+}
+
+@-webkit-keyframes opacity-fade-out {
+	0% {
+		opacity: 1
+	}
+	to {
+		opacity: 0
+	}
+}
+
+@keyframes opacity-fade-out {
+	0% {
+		opacity: 1
+	}
+	to {
+		opacity: 0
+	}
+}
+
+::-webkit-scrollbar {
+	position: absolute;
+	width: .5vh
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, .1450980392156863)
+}
+
+::-webkit-scrollbar-thumb {
+	background: #ff0066
+}

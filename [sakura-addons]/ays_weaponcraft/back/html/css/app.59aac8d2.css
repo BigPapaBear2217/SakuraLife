@@ -1,0 +1,508 @@
+*,
+:after,
+:before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font-family: Poppins;
+	overflow: hidden;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.ays_main {
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+	width: 90.9vh;
+	height: 53.1vh;
+	background-color: #131313;
+	margin-left: .05vh;
+	margin-top: .05vh;
+	opacity: 1
+}
+
+.ays_border,
+.ays_main {
+	position: absolute;
+	display: flex;
+	border-radius: 1.8vh
+}
+
+.ays_border {
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	overflow: hidden
+}
+
+.ays_circle {
+	width: 50vh;
+	height: 50vh;
+	top: -17vh;
+	left: -17vh
+}
+
+.ays_circle,
+.ays_circle2 {
+	position: absolute;
+	background-color: #ff0066;
+	border-radius: 100%;
+	filter: blur(5vh)
+}
+
+.ays_circle2 {
+	width: 40vh;
+	height: 40vh;
+	bottom: -17vh;
+	right: -17vh
+}
+
+.ays_border2 {
+	position: absolute;
+	width: 99.65%;
+	height: 99.65%;
+	background-color: #131313;
+	border-radius: 1.7vh
+}
+
+.ays_close {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 3.45vh;
+	height: 3.45vh;
+	background-color: #212121;
+	right: 0;
+	border-radius: 0 1.8vh 0 1vh;
+	cursor: pointer;
+	border: none;
+	outline: none
+}
+
+.ays_close i {
+	color: #fff;
+	font-size: 1.8vh;
+	transition: .1s
+}
+
+.ays_close:hover i {
+	color: #ff0066
+}
+
+.ays_weaponlist {
+	position: relative;
+	transform: translateY(-50%);
+	top: 50%;
+	width: 30vh;
+	height: 48vh;
+	overflow: scroll;
+	overflow-x: hidden
+}
+
+.ays_weaponlist div {
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	grid-gap: 1.45vh
+}
+
+.ays_weapon {
+	position: relative;
+	width: 24.5vh;
+	height: 10.9vh;
+	background-color: #1a1a1a;
+	left: 3.3vh;
+	border-radius: .9vh;
+	cursor: pointer
+}
+
+.selected {
+	border-bottom: .9vh solid #ff0066;
+	overflow: hidden;
+	background: linear-gradient(0deg, #ff0066 -350%, #1a1a1a 110%)
+}
+
+.ays_weapon h1 {
+	position: relative;
+	text-align: center;
+	font-size: 1.15vh;
+	color: #ff0066;
+	margin-top: 1.6vh
+}
+
+.ays_weapon img {
+	position: absolute;
+	transform: translate(-50%);
+	left: 50%;
+	width: auto;
+	height: 5vh;
+	margin-top: 4.3vh;
+	-webkit-user-drag: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none
+}
+
+.ays_weaponinfos {
+	position: relative;
+	width: 60.9vh;
+	height: 100%
+}
+
+.ays_weaponinfos h1 {
+	position: relative;
+	text-align: center;
+	font-size: 1.5vh;
+	margin-top: 2vh;
+	color: #b3b3b3
+}
+
+.ays_weaponinfo_label {
+	position: relative;
+	transform: translate(-50%);
+	left: 50%;
+	width: 100%;
+	margin-top: 1vh;
+	height: 13vh
+}
+
+.ays_weaponinfo_circle {
+	position: absolute;
+	transform: translate(-50%);
+	left: 50%;
+	width: 17vh;
+	height: 17vh;
+	background: linear-gradient(20deg, #131313 30%, #191919 50%);
+	border-radius: 100%
+}
+
+.ays_weaponinfos img {
+	position: relative;
+	transform: translate(-50%);
+	left: 50%;
+	width: 30vh;
+	height: auto;
+	margin-top: 3.5vh;
+	z-index: 1
+}
+
+.ays_weaponinfo_label h1 {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	font-size: 6vh;
+	color: rgba(31, 31, 31, .5803921568627451);
+	top: 7.4vh
+}
+
+.ays_specs {
+	position: relative;
+	width: 100%;
+	top: 6vh
+}
+
+.ays_spec {
+	position: relative;
+	transform: translate(-50%);
+	left: 50%;
+	width: 26vh;
+	margin-top: .7vh;
+	background-color: rgba(255, 0, 0, 0)
+}
+
+.ays_spec p {
+	position: relative;
+	color: #afafaf;
+	font-size: 1.2vh
+}
+
+.ays_spec_progs {
+	position: relative;
+	display: flex;
+	margin-left: .3vh;
+	margin-top: .35vh
+}
+
+.ays_spec_prog {
+	background-color: #202020
+}
+
+.ays_spec_prog,
+.ays_spec_prog_active {
+	position: relative;
+	float: left;
+	width: 3.5vh;
+	height: .55vh;
+	margin-right: 1vh;
+	border-radius: 100vh
+}
+
+.ays_spec_prog_active {
+	background-color: #ff0066
+}
+
+.ays_spec_progs p {
+	position: relative;
+	color: #afafaf;
+	font-size: 1.2vh;
+	bottom: .6vh;
+	left: .7vh;
+	font-size: 1.05vh
+}
+
+.ays_needscraft {
+	margin-top: 9vh
+}
+
+.ays_needs,
+.ays_needscraft {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+
+.ays_needs {
+	height: 2.8vh;
+	padding-left: 1vh;
+	padding-right: 1vh;
+	background-color: #212121;
+	border-radius: .8vh;
+	margin-right: 1vh
+}
+
+.ays_needs p {
+	color: #afafaf;
+	font-size: 1.1vh
+}
+
+.ays_craft {
+	position: relative;
+	color: #fff;
+	font-size: 1.1vh;
+	background-color: #ff0066;
+	border: none;
+	outline: none;
+	width: 12.4vh;
+	height: 2.8vh;
+	border-radius: .8vh;
+	cursor: pointer
+}
+
+.neededitem {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	left: .2vh
+}
+
+.neededitem img {
+	position: relative;
+	width: 1.6vh;
+	height: auto;
+	float: left;
+	margin-top: 0;
+	left: 0;
+	margin-left: 1.2vh
+}
+
+.neededitem p {
+	position: relative;
+	right: .3vh
+}
+
+::-webkit-scrollbar {
+	position: absolute;
+	width: .75vh;
+	border-radius: 5vh
+}
+
+::-webkit-scrollbar-track {
+	background: #212121;
+	border-radius: 5vh
+}
+
+::-webkit-scrollbar-thumb {
+	background: #ff0066;
+	border-radius: 5vh
+}
+
+[tooltip] {
+	position: relative
+}
+
+[tooltip]:after,
+[tooltip]:before {
+	text-transform: none;
+	font-size: 1vh;
+	line-height: 1;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	position: absolute;
+	display: none;
+	opacity: 0;
+	margin-bottom: .3vh
+}
+
+[tooltip]:before {
+	content: "";
+	border: .5vh solid transparent;
+	z-index: 1001
+}
+
+[tooltip]:after {
+	content: attr(tooltip);
+	font-family: Helvetica, sans-serif;
+	text-align: center;
+	min-width: 0;
+	max-width: 1000vh;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 1ch 1.5ch;
+	border-radius: .3ch;
+	box-shadow: 0 1em 2em -.5em rgba(0, 0, 0, .35);
+	background: #333;
+	color: #fff;
+	z-index: 1000
+}
+
+[tooltip]:hover:after,
+[tooltip]:hover:before {
+	display: block;
+	border-radius: .3vh
+}
+
+[tooltip=""]:after,
+[tooltip=""]:before {
+	display: none!important
+}
+
+[tooltip]:not([flow]):before,
+[tooltip][flow^=up]:before {
+	bottom: 100%;
+	border-bottom-width: 0;
+	border-top-color: #333
+}
+
+[tooltip]:not([flow]):after,
+[tooltip][flow^=up]:after {
+	bottom: calc(100% + 5px)
+}
+
+[tooltip]:not([flow]):after,
+[tooltip]:not([flow]):before,
+[tooltip][flow^=up]:after,
+[tooltip][flow^=up]:before {
+	left: 50%;
+	transform: translate(-50%, -.5em)
+}
+
+[tooltip][flow^=down]:before {
+	top: 100%;
+	border-top-width: 0;
+	border-bottom-color: #333
+}
+
+[tooltip][flow^=down]:after {
+	top: calc(100% + 5px)
+}
+
+[tooltip][flow^=down]:after,
+[tooltip][flow^=down]:before {
+	left: 50%;
+	transform: translate(-50%, .5em)
+}
+
+[tooltip][flow^=left]:before {
+	top: 50%;
+	border-right-width: 0;
+	border-left-color: #333;
+	left: -5px;
+	transform: translate(-.5em, -50%)
+}
+
+[tooltip][flow^=left]:after {
+	top: 50%;
+	right: calc(100% + 5px);
+	transform: translate(-.5em, -50%)
+}
+
+[tooltip][flow^=right]:before {
+	top: 50%;
+	border-left-width: 0;
+	border-right-color: #333;
+	right: -5px;
+	transform: translate(.5em, -50%)
+}
+
+[tooltip][flow^=right]:after {
+	top: 50%;
+	left: calc(100% + 5px);
+	transform: translate(.5em, -50%)
+}
+
+@-webkit-keyframes tooltips-vert {
+	to {
+		opacity: .9;
+		transform: translate(-50%)
+	}
+}
+
+@keyframes tooltips-vert {
+	to {
+		opacity: .9;
+		transform: translate(-50%)
+	}
+}
+
+@-webkit-keyframes tooltips-horz {
+	to {
+		opacity: .9;
+		transform: translateY(-50%)
+	}
+}
+
+@keyframes tooltips-horz {
+	to {
+		opacity: .9;
+		transform: translateY(-50%)
+	}
+}
+
+[tooltip]:not([flow]):hover:after,
+[tooltip]:not([flow]):hover:before,
+[tooltip][flow^=down]:hover:after,
+[tooltip][flow^=down]:hover:before,
+[tooltip][flow^=up]:hover:after,
+[tooltip][flow^=up]:hover:before {
+	-webkit-animation: tooltips-vert .3s ease-out forwards;
+	animation: tooltips-vert .3s ease-out forwards
+}
+
+[tooltip][flow^=left]:hover:after,
+[tooltip][flow^=left]:hover:before,
+[tooltip][flow^=right]:hover:after,
+[tooltip][flow^=right]:hover:before {
+	-webkit-animation: tooltips-horz .3s ease-out forwards;
+	animation: tooltips-horz .3s ease-out forwards
+}
+

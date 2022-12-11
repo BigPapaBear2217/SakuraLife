@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+body {
+    display: block;
+    /* background-color: rgb(107, 107, 107); */
+    overflow-y: hidden;
+    /* Hide vertical scrollbar */
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
+    font-family: Poppins, sans-serif;
+}
+
+#ui {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.carhud {
+    display: flex;
+    width: 280px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.664);
+    border-radius: 15px 15px 0 0;
+}
+
+.carhud-hidden {
+    display: none;
+}
+
+.carinfo {
+    position: relative;
+    left: 5%;
+    top: 17%;
+    display: flex;
+    flex-direction: row;
+}
+
+.lockkreis,
+.motorkreis {
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
+    font-size: 22px;
+}
+
+.icon {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.velo {
+    margin-left: 17%;
+    margin-right: 15%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.gas {
+    float: right;
+    margin-top: 5%;
+}
+
+.motor {
+    width: 24px;
+}
+
+#lock {
+    color: #F7A2F3;
+    font-size: 16px;
+}
+
+.fuel {
+    color: #fff;
+    font-size: 16px;
+}
+
+
+/* TEXTE */
+
+#geschtext {
+    font-family: Poppins;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: -25%;
+}
+
+.kmhtext {
+    color: #F7A2F3;
+    font-size: 15px;
+}
+
+#fueltext {
+    margin-right: 10px;
+    color: #fff;
+}

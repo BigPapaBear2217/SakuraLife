@@ -1,0 +1,78 @@
+Jason Level->
+
+Installieren:
+
+1. SQL Datei in eure Datenbank executen.
+2. ES_Extended/Client/main.lua öffnen nach setjob suchen und dort folgendes einfügen (Sollte so in etwa am ende aussehen: https://prnt.sc/1gqroew)
+
+	RegisterNetEvent('esx:setLevel')
+	AddEventHandler('esx:setLevel', function(level)
+		ESX.PlayerData.level = level
+	end)
+
+	RegisterNetEvent('esx:setRP')
+	AddEventHandler('esx:setRP', function(rp)
+		ESX.PlayerData.rp = rp
+	end)
+	
+3. es_extended/server/classes/player.lua öffnen und wie auf den Bild eintragen(https://prnt.sc/1gqskyg)
+3. nachdem wie auf dem Bild oben drüber editiert ein wenig runter Scrollen bis dort folgendes steht:
+	self.setCoords = function(coords)
+		self.updateCoords(coords)
+		self.triggerEvent('esx:teleport', coords)
+	end
+	
+3. unter dieser Zeile folgendes einfügen(https://prnt.sc/1gqtsaf):
+	
+	self.setLevel = function(level)
+		self.updateLevel(level)
+	end
+
+	self.updateLevel = function(level)
+		self.level = tostring(level)
+		self.triggerEvent('esx:setLevel', self.level)
+	end
+	
+	self.setRP = function(rp)
+		self.updateRP(rp)
+	end
+
+	self.updateRP = function(rp)
+		self.rp = tostring(rp)
+		self.triggerEvent('esx:setRP', self.rp)
+	end	
+	
+	
+4. es_extended/server/classes/player.lua öffnen und nach "self.getJob" suchen unter diesen folgendes einfügen!(https://prnt.sc/1gquepp)
+
+	self.getLevel = function()
+		return self.level
+	end
+	
+	self.getRP = function()
+		return self.rp
+	end	
+
+5. es_extended/server/functions.lua öffnen und dort nach "ESX.SavePlayer = function(xPlayer, cb)" suchen und dort alles wie auf dem Bild eintragen(https://prnt.sc/1gqvhun)	
+
+6. es_extended/server/main.lua öffnen nach "local userData = {" suchen und wie auf dem Bild einfügen! (https://prnt.sc/1gqw0ho)
+6. Danach ein stück weiter runter gehen und die MYSQL Abfrage wie auf den Bild ändern (https://prnt.sc/1gqwe6t)
+6. Danach nach "if result[1].position and" suchen und dort drunter wie auf den Bild einfügen (https://prnt.sc/1gqwsb9)
+
+	if result[1].rp and result[1].rp ~= '' then
+		userData.rp = tostring(result[1].rp)
+	else
+		print('[es_extended] [^3WARNING^7] Hat keine Respektpunkte daher geben wir ihm nun Respektpunkt 0! Fix dein Scheiß!.')
+		userData.rp = "0"
+	end
+	
+	if result[1].level and result[1].level ~= '' then
+		userData.level = tostring(result[1].level)
+	else
+		print('[es_extended] [^3WARNING^7] Hat kein Level daher geben wir ihm nun Level 0! Fix dein Scheiß!.')
+		userData.level = "0"
+	end
+	
+6. Danach nach "local xPlayer = CreateExtendedPlayer" suchen und wie auf dem Bild alles abändern (https://prnt.sc/1gqxi3d)
+
+7. Das Script in der Server Config zum Starten eintragen und alles sollte Funktionieren :) Level Serverseitig mit - getLevel() abfragbar!

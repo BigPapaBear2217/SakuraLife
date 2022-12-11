@@ -1,0 +1,89 @@
+@font-face {
+  font-family: bankgothic;
+  src: url('../fonts/bankgothic.ttf');
+}
+
+@font-face {
+  font-family: pcdown;
+  src: url('../fonts/pdown.ttf');
+}
+@font-face {
+  font-family: gzc;
+  src: url('../fonts/gzc.ttf');
+}
+@font-face {
+  font-family: inventario;
+  src: url('../fonts/sufrimeda.ttf');
+}
+#cursor {
+  position: absolute;
+  z-index: 999999999;
+  display:  none;
+}
+
+#controls {
+  font-family   : gzc;
+  font-size     : 3em;
+  color         : rgba(153, 0, 0, 0.7);
+  position      : absolute;
+  bottom        : 40;
+  right         : 40;
+  
+  text-shadow:
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000
+  ;
+}
+
+.controls {
+  display: none;
+}
+
+.dialog {
+
+
+  position        : absolute;
+  overflow        : hidden;
+  top             : 50%;
+  left            : 50%;
+  width           : 400px;
+  height          : 404px;
+  transform       : translate(-50%, -50%);
+}
+
+.dialog.big {
+  height: 600px;
+}
+
+.dialog .head {
+  background-color: #990000;
+  text-align      : center;
+  height          : 40px;
+}
+
+.dialog .head span:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.dialog input[type="text"] {
+  width : 100%;
+  height: 32px;
+}
+
+.dialog textarea {
+  width : 100%;
+  height: 128px;
+}
+
+.dialog button[name="submit"] {
+
+}
+
+.dialog button[name="cancel"] {
+
+}

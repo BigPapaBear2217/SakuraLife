@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>by meerbi.design</title>
+<style id="applicationStylesheet" type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+	user-select: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+* {
+	font-family: Poppins;
+}
+	.mediaViewInfo {
+		--web-view-name: Canvas;
+		--web-view-id: Canvas;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Canvas;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Canvas {
+		position: absolute;
+		width: 1920px;
+		height: 1080px;
+		background-color: rgba(0,0,0,0);
+		overflow: hidden;
+		--web-view-name: Canvas;
+		--web-view-id: Canvas;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+	}
+	#loadingscreen {
+		position: absolute;
+		width: 2079px;
+		height: 1515px;
+		left: -89px;
+		top: 0px;
+		overflow: visible;
+	}
+	#bg {
+		position: absolute;
+		width: 1920px;
+		height: 1080px;
+		left: 89px;
+		top: 0px;
+		overflow: visible;
+	}
+	#LOGO {
+		position: absolute;
+		width: 366.68px;
+		height: 396.68px;
+		left: 860.66px;
+		top: 260.66px;
+		overflow: visible;
+	}
+	#NIGHT-V {
+		left: 1002px;
+		top: 145px;
+		position: absolute;
+		overflow: visible;
+		width: 93px;
+		white-space: nowrap;
+		line-height: 24.999998092651367px;
+		margin-top: -2.083333969116211px;
+		text-align: center;
+		font-style: normal;
+		font-weight: Bold;
+		font-size: 20.833330154418945px;
+		color: rgb(224, 28, 159);
+	}
+	#nighvv_3 {
+		opacity: 0.361;
+		fill: rgba(0,0,0,1);
+	}
+	.nighvv_3 {
+		position: absolute;
+		overflow: visible;
+		width: 2079px;
+		height: 702px;
+		left: 0px;
+		top: 813px;
+	}
+	#Gruppe_3 {
+		position: absolute;
+		width: 635px;
+		height: 208px;
+		left: 238px;
+		top: 840px;
+		overflow: visible;
+	}
+	#nighvv_2 {
+		opacity: 0.251;
+		fill: rgba(0,0,0,1);
+	}
+	.nighvv_2 {
+		position: absolute;
+		overflow: visible;
+		width: 635px;
+		height: 208px;
+		left: 0px;
+		top: 0px;
+	}
+	#Willkommen_bei_NIGHTV__Lorem_i {
+		left: 31px;
+		top: 25px;
+		position: absolute;
+		overflow: visible;
+		width: 565px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -2.083333969116211px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20.833330154418945px;
+		color: rgba(255,255,255,1);
+	}
+	#Gruppe_3_o {
+		position: absolute;
+		width: 969px;
+		height: 113px;
+		left: 912px;
+		top: 840px;
+		overflow: visible;
+	}
+	#nighvv_2_p {
+		opacity: 0.251;
+		fill: rgba(0,0,0,1);
+	}
+	.nighvv_2_p {
+		position: absolute;
+		overflow: visible;
+		width: 969px;
+		height: 107px;
+		left: 0px;
+		top: 0px;
+	}
+	#CHANGELOG_26062021_-_Lorem_ips {
+		left: 28px;
+		top: 11px;
+		position: absolute;
+		overflow: visible;
+		width: 233px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -2.083333969116211px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 20.833330154418945px;
+		color: rgba(255,255,255,1);
+	}
+	#Gruppe_4 {
+		position: absolute;
+		width: 112px;
+		height: 20px;
+		left: 993px;
+		top: 530px;
+		overflow: visible;
+	}
+	#Ellipse_1 {
+		fill: rgb(224, 28, 159);
+	}
+	.Ellipse_1 {
+		position: absolute;
+		overflow: visible;
+		width: 20px;
+		height: 20px;
+		left: 0px;
+		top: 0px;
+	}
+	#Ellipse_1_t {
+		fill: rgb(224, 28, 159);
+	}
+	.Ellipse_1_t {
+		position: absolute;
+		overflow: visible;
+		width: 20px;
+		height: 20px;
+		left: 46px;
+		top: 0px;
+	}
+	#Ellipse_1_u {
+		fill: rgb(224, 28, 159);
+	}
+	.Ellipse_1_u {
+		position: absolute;
+		overflow: visible;
+		width: 20px;
+		height: 20px;
+		left: 92px;
+		top: 0px;
+	}
+	#Gruppe_5 {
+		position: absolute;
+		width: 969px;
+		height: 76px;
+		left: 912px;
+		top: 972px;
+		overflow: visible;
+	}
+	#Gruppe_1 {
+		position: absolute;
+		width: 301px;
+		height: 76px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#nighvv_2_x {
+		opacity: 0.251;
+		fill: rgba(0,0,0,1);
+	}
+	.nighvv_2_x {
+		position: absolute;
+		overflow: visible;
+		width: 301px;
+		height: 76px;
+		left: 0px;
+		top: 0px;
+	}
+	#Gruppe_2 {
+		position: absolute;
+		width: 173px;
+		height: 46px;
+		left: 63px;
+		top: 20px;
+		overflow: visible;
+	}
+	#teamspeak-brands {
+		position: absolute;
+		width: 32px;
+		height: 32px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Teamspeak_ {
+		left: 75px;
+		top: 2px;
+		position: absolute;
+		overflow: visible;
+		width: 99px;
+		white-space: nowrap;
+		line-height: 20.000003814697266px;
+		margin-top: -1.6666669845581055px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16.666669845581055px;
+		color: rgba(255,255,255,1);
+	}
+	#Soon {
+		left: 75px;
+		top: 19px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		line-height: 15.000000953674316px;
+		margin-top: -1.2500004768371582px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgb(224, 28, 159);
+	}
+	#Gruppe_1_ {
+		position: absolute;
+		width: 301px;
+		height: 76px;
+		left: 334px;
+		top: 0px;
+		overflow: visible;
+	}
+	#nighvv_2_ {
+		opacity: 0.251;
+		fill: rgba(0,0,0,1);
+	}
+	.nighvv_2_ {
+		position: absolute;
+		overflow: visible;
+		width: 301px;
+		height: 76px;
+		left: 0px;
+		top: 0px;
+	}
+	#Gruppe_2_ {
+		position: absolute;
+		width: 132px;
+		height: 34px;
+		left: 65px;
+		top: 22px;
+		overflow: visible;
+	}
+	#discord-brands_1 {
+		position: absolute;
+		width: 29px;
+		height: 34px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Discord {
+		left: 70px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 63px;
+		white-space: nowrap;
+		line-height: 20.000003814697266px;
+		margin-top: -1.6666669845581055px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16.666669845581055px;
+		color: rgba(255,255,255,1);
+	}
+	#Soon_ {
+		left: 69px;
+		top: 17px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		line-height: 15.000000953674316px;
+		margin-top: -1.2500004768371582px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgb(224, 28, 159);
+	}
+	#Gruppe_1_ba {
+		position: absolute;
+		width: 301px;
+		height: 76px;
+		left: 668px;
+		top: 0px;
+		overflow: visible;
+	}
+	#nighvv_2_ba {
+		opacity: 0.251;
+		fill: rgba(0,0,0,1);
+	}
+	.nighvv_2_ba {
+		position: absolute;
+		overflow: visible;
+		width: 301px;
+		height: 76px;
+		left: 0px;
+		top: 0px;
+	}
+	#Gruppe_2_ba {
+		position: absolute;
+		width: 146px;
+		height: 34px;
+		left: 66px;
+		top: 22px;
+		overflow: visible;
+	}
+	#wondicon-ui-free-website_11121 {
+		position: absolute;
+		width: 28px;
+		height: 28px;
+		left: 0px;
+		top: 3px;
+		overflow: visible;
+	}
+	#Webseite {
+		left: 68px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 79px;
+		white-space: nowrap;
+		line-height: 20.000003814697266px;
+		margin-top: -1.6666669845581055px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16.666669845581055px;
+		color: rgba(255,255,255,1);
+	}
+	#Soon_bd {
+		left: 68px;
+		top: 17px;
+		position: absolute;
+		overflow: visible;
+		width: 33px;
+		white-space: nowrap;
+		line-height: 15.000000953674316px;
+		margin-top: -1.2500004768371582px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgb(224, 28, 159);
+	}
+		.loading {
+		 	z-index: 10000;
+	 border-radius: 50%;
+	 width: 60px;
+	 height: 60px;
+	 border: 0.45rem solid rgba(255, 255, 255, 0.2);
+	 border-top-color: #fff;
+	 margin-left: 20px;
+	 margin-top: 160px;
+	 animation: spin 1s infinite linear;
+}
+ .loading-pulse {
+ 	z-index: 10000;
+	 position: relative;
+	 width: 6px;
+	 height: 24px;
+	 background: #050505;
+	 animation: pulse 750ms infinite;
+	 animation-delay: 250ms;
+}
+ .loading-pulse:before, .loading-pulse:after {
+ 	z-index: 10000;
+	 content: '';
+	 position: absolute;
+	 display: block;
+	 height: 6px;
+	 width: 6px;
+	 background: #050505;
+	 top: 50%;
+	 transform: translateY(-50%);
+	 animation: pulse 750ms infinite;
+}
+ .loading-pulse:before {
+ 	z-index: 10000;
+	 left: -12px;
+}
+ .loading-pulse:after {
+ 	z-index: 10000;
+	 left: 12px;
+	 animation-delay: 500ms;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to{
+    transform: rotate(359deg);
+  }
+}
+
+
+
+@keyframes spin {
+	 0% {
+		 transform: rotate(0deg);
+	}
+	 100% {
+		 transform: rotate(360deg);
+	}
+}
+ @keyframes pulse {
+	 50% {
+		 background: #fff;
+	}
+}
+</style>
+<script id="applicationScript" type="text/javascript" src="rescale.js"></script>
+</head>
+<body>
+<div id="Canvas">
+	<div id="loadingscreen">
+		<img id="bg" src="https://media.discordapp.net/attachments/894003960984252456/919724076061323305/loadingback.png?width=1202&height=676">
+			
+		<img id="LOGO" src="https://cdn.discordapp.com/attachments/894003960984252456/919710352156033084/LOGOTRANSPARENT_Animation.gif">
+			
+		<div id="NIGHT-V">
+			<span></span>
+		</div>
+		<svg class="nighvv_3">
+			<rect id="nighvv_3" rx="5" ry="5" x="0" y="0" width="2079" height="702">
+			</rect>
+		</svg>
+		<div id="Gruppe_3">
+			<svg class="nighvv_2">
+				<rect id="nighvv_2" rx="5" ry="5" x="0" y="0" width="635" height="208">
+				</rect>
+			</svg>
+			<div id="Willkommen_bei_NIGHTV__Lorem_i">
+				<span>Willkommen auf </span><span style="color:rgb(224, 28, 159);">Sakura 🌸 Life,</span><br><span style="color:rgba(255,143,4,1);"></span><br><span style="font-size:14.583330154418945px;color:rgba(200,200,200,1);">SakuraLife ist dein Deutscher Roleplay Server auf den <br> du schon lange gewartet hast! </span><br><span style="font-size:14.583330154418945px;color:rgba(200,200,200,1);">  Wir bieten dir Abwechslungsreiches RP, Einzigartige Features und eine <br> Menge Spielspaß! </span><br><span style="font-size:14.583330154418945px;color:rgba(200,200,200,1);">Unser Serverteam steht jederzeit für Support und Allgemeinfragen zur Verfügung! </span><br><span style="font-size:14.583330154418945px;color:rgba(200,200,200,1);"></span><br><span style="font-size:14.583330154418945px;color:rgba(200,200,200,1);"></span>
+			</div>
+		</div>
+		<div id="Gruppe_3_o">
+			<svg class="nighvv_2_p">
+				<rect id="nighvv_2_p" rx="5" ry="5" x="0" y="0" width="969" height="107">
+				</rect>
+			</svg>
+			<div id="CHANGELOG_26062021_-_Lorem_ips">
+				<span>CHANGELOG </span><span style="font-size:12.5px;color:rgba(190,190,190,1);">(13.12.2021)</span><br><span style="font-size:14.583330154418945px;color:rgba(200,200,200,1);">➥ Server ist in die Alpha gestartet! </span><br><span style="font-size:14.583330154418945px;color:rgba(200,200,200,1);">➥ Neues Logo wurde angepasst und hinzugefügt </span><br><span style="font-size:14.583330154418945px;color:rgba(200,200,200,1);">➥ Weitere Infos auf dem Discord</span>
+			</div>
+		</div>
+		<div id="Gruppe_4">
+			<div class="loading"></div>
+		</div>
+		<div id="Gruppe_5">
+			<div id="Gruppe_1">
+				<svg class="nighvv_2_x">
+					<rect id="nighvv_2_x" rx="5" ry="5" x="0" y="0" width="301" height="76">
+					</rect>
+				</svg>
+				<div id="Gruppe_2">
+					<img id="teamspeak-brands" src="https://cdn.discordapp.com/attachments/894003960984252456/919724864250740827/teamspeak-brands.png">
+						
+					<div id="Teamspeak_">
+						<span>Teamspeak</span><br>
+					</div>
+					<div id="Soon">
+						<span>SakuraLife</span>
+					</div>
+				</div>
+			</div>
+			<div id="Gruppe_1_">
+				<svg class="nighvv_2_">
+					<rect id="nighvv_2_" rx="5" ry="5" x="0" y="0" width="301" height="76">
+					</rect>
+				</svg>
+				<div id="Gruppe_2_">
+					<img id="discord-brands_1" src="https://cdn.discordapp.com/attachments/894003960984252456/919724864066166856/discord-brands_1.png">
+						
+					<div id="Discord">
+						<span>Discord</span>
+					</div>
+					<div id="Soon_">
+						<span>DSC.gg/SakuraLife</span>
+					</div>
+				</div>
+			</div>
+			<div id="Gruppe_1_ba">
+				<svg class="nighvv_2_ba">
+					<rect id="nighvv_2_ba" rx="5" ry="5" x="0" y="0" width="301" height="76">
+					</rect>
+				</svg>
+				<div id="Gruppe_2_ba">
+					<img id="wondicon-ui-free-website_11121" src="https://cdn.discordapp.com/attachments/894003960984252456/919724864473006081/wondicon-ui-free-website_11121.png">
+						
+					<div id="Webseite">
+						<span>Webseite</span>
+					</div>
+					<div id="Soon_bd">
+						<span>SakuraLife.cc</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<audio id="nibba" src="music.mp3" autoplay>
+<p>Wenn Du dies liest, unterstützt dein PC die Hintergrundmusik nicht.</p>
+</audio>
+                         <script>
+                                var audio = document.getElementById("nibba");
+                                audio.volume = 0.2;
+
+
+								function toggleAudio() {
+									if(audio.paused) {
+										audio.play();
+									} else {
+										audio.pause();
+									}
+								}
+
+								document.addEventListener('keypress', function (evt) {
+									if(evt.keyCode == 32) {
+										toggleAudio();
+									}
+								});
+                              </script>
+</body>
+<script src="script.js"></script>
+</html>

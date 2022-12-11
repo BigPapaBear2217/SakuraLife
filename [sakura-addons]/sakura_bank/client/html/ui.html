@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>by meerbi.design</title>
+<style id="applicationStylesheet" type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+	display:  none;
+	user-select: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+* {
+	font-family: Poppins;
+}
+	.mediaViewInfo {
+		--web-view-name: Canvas;
+		--web-view-id: Canvas;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Canvas;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Canvas {
+		position: absolute;
+		width: 1920px;
+		height: 1080px;
+		background-color: rgba(0,0,0,0);
+		overflow: hidden;
+		--web-view-name: Canvas;
+		--web-view-id: Canvas;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+	}
+	#banking {
+		-webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+		position: absolute;
+		width: 1135px;
+		height: 611px;
+		left: 393px;
+		top: 235px;
+		overflow: visible;
+	}
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+	#background {
+		position: absolute;
+		width: 1135px;
+		height: 611px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#stats {
+		position: absolute;
+		width: 946px;
+		height: 451px;
+		left: 94px;
+		top: 39px;
+		overflow: visible;
+	}
+	#card {
+		position: absolute;
+		width: 352px;
+		height: 280px;
+		left: 0px;
+		top: 2px;
+		overflow: visible;
+	}
+	#punkt-3 {
+		fill: rgba(48,48,48,1);
+	}
+	.punkt-3 {
+		position: absolute;
+		overflow: visible;
+		width: 7px;
+		height: 7px;
+		left: 13px;
+		top: 296px;
+	}
+	#punkt-2 {
+		fill: rgba(48,48,48,1);
+	}
+	.punkt-2 {
+		position: absolute;
+		overflow: visible;
+		width: 7px;
+		height: 7px;
+		left: 29px;
+		top: 296px;
+	}
+	#punkt-1 {
+		fill: rgba(48,48,48,1);
+	}
+	.punkt-1 {
+		position: absolute;
+		overflow: visible;
+		width: 7px;
+		height: 7px;
+		left: 45px;
+		top: 296px;
+	}
+	#line-2 {
+		fill: #ff0066;
+	}
+	.line-2 {
+		position: absolute;
+		overflow: visible;
+		width: 30px;
+		height: 7px;
+		left: 61px;
+		top: 296px;
+	}
+	#Willkommen_meerbidesign {
+		left: 13px;
+		top: 318px;
+		position: absolute;
+		overflow: visible;
+		width: 179px;
+		white-space: nowrap;
+		line-height: 21px;
+		margin-top: -5.083334922790527px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.833330154418945px;
+		color: rgba(143,143,143,1);
+		letter-spacing: 2.5px;
+	}
+	#senden {
+		position: absolute;
+		width: 50px;
+		height: 73px;
+		left: 17px;
+		top: 378px;
+		overflow: visible;
+	}
+	#inner {
+		fill: rgba(25,25,25,1);
+		stroke: rgba(61,61,61,1);
+		stroke-width: 1.2000000476837158px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 100;
+		shape-rendering: auto;
+	}
+	.inner {
+		position: absolute;
+		overflow: visible;
+		width: 50px;
+		height: 50px;
+		left: 0px;
+		top: 0px;
+	}
+	#arrow-right {
+		position: absolute;
+		width: 18px;
+		height: 18px;
+		left: 16px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Senden_s {
+		left: 5px;
+		top: 58px;
+		position: absolute;
+		overflow: visible;
+		width: 40px;
+		white-space: nowrap;
+		line-height: 12.500004768371582px;
+		margin-top: -1.0416674613952637px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.416669845581055px;
+		color: rgba(166,166,166,1);
+	}
+	#empfangen {
+		position: absolute;
+		width: 60px;
+		height: 73px;
+		left: 86px;
+		top: 378px;
+		overflow: visible;
+	}
+	#inner_u {
+		fill: rgba(25,25,25,1);
+		stroke: rgba(61,61,61,1);
+		stroke-width: 1.2000000476837158px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 100;
+		shape-rendering: auto;
+	}
+	.inner_u {
+		position: absolute;
+		overflow: visible;
+		width: 50px;
+		height: 50px;
+		left: 5px;
+		top: 0px;
+	}
+	#arrow-right_v {
+		position: absolute;
+		width: 18px;
+		height: 18px;
+		left: 21px;
+		top: 16px;
+		overflow: visible;
+	}
+	#Empfangen_w {
+		left: 0px;
+		top: 58px;
+		position: absolute;
+		overflow: visible;
+		width: 61px;
+		white-space: nowrap;
+		line-height: 12.500004768371582px;
+		margin-top: -1.0416674613952637px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.416669845581055px;
+		color: rgba(166,166,166,1);
+	}
+	#ubersicht {
+		position: absolute;
+		width: 51px;
+		height: 73px;
+		left: 168px;
+		top: 378px;
+		overflow: visible;
+	}
+	#inner_y {
+		fill: rgba(25,25,25,1);
+		stroke: rgba(61,61,61,1);
+		stroke-width: 1.2000000476837158px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 100;
+		shape-rendering: auto;
+	}
+	.inner_y {
+		position: absolute;
+		overflow: visible;
+		width: 50px;
+		height: 50px;
+		left: 0px;
+		top: 0px;
+	}
+	#bersicht {
+		left: 2px;
+		top: 58px;
+		position: absolute;
+		overflow: visible;
+		width: 50px;
+		white-space: nowrap;
+		line-height: 12.500004768371582px;
+		margin-top: -1.0416674613952637px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.416669845581055px;
+		color: rgba(166,166,166,1);
+	}
+	#bar-chart-2 {
+		position: absolute;
+		width: 12px;
+		height: 16px;
+		left: 18px;
+		top: 17px;
+		overflow: visible;
+	}
+	#graph {
+		position: absolute;
+		width: 505px;
+		height: 248px;
+		left: 441px;
+		top: 22px;
+		overflow: visible;
+	}
+	#Kontostand {
+		left: 451px;
+		top: 58px;
+		position: absolute;
+		overflow: visible;
+		width: 68px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -8.375px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11.25px;
+		color: rgba(125,125,125,1);
+		letter-spacing: 0.2px;
+	}
+	#n__1423512 {
+		left: 448px;
+		top: 76px;
+		position: absolute;
+		overflow: visible;
+		width: 103px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -5.666665077209473px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16.666669845581055px;
+		color: #ff0066;
+		letter-spacing: 0.2px;
+	}
+	#line {
+		position: absolute;
+		width: 175px;
+		height: 6px;
+		left: 449px;
+		top: 23px;
+		overflow: visible;
+	}
+	#Einkommen {
+		left: 453px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -7.75px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: #ff0066;
+		letter-spacing: 0.2px;
+	}
+	#Ausgaben {
+		left: 545px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 67px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -7.75px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgba(124,124,124,1);
+		letter-spacing: 0.2px;
+	}
+	#control {
+		position: absolute;
+		width: 496px;
+		height: 173.389px;
+		left: 539px;
+		top: 339px;
+		overflow: visible;
+	}
+	#abheben {
+		position: absolute;
+		width: 495px;
+		height: 53.389px;
+		left: 1px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Ebene_9 {
+		position: absolute;
+		width: 495px;
+		height: 48px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#VISA_SECURED {
+		left: 34.844px;
+		top: 41.389px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -9.833334922790527px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 8.333330154418945px;
+		color: rgba(126,126,126,1);
+		letter-spacing: 0.2px;
+	}
+	#n_10000 {
+		left: 20px;
+		top: 15px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -6.708334922790527px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14.583330154418945px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.2px;
+	}
+	#bankingg_14 {
+		fill: #ff0066;
+	}
+	.bankingg_14 {
+		position: absolute;
+		overflow: visible;
+		width: 109px;
+		height: 27px;
+		left: 373px;
+		top: 11px;
+	}
+	#Abheben_bd {
+		left: 397px;
+		top: 18px;
+		position: absolute;
+		overflow: visible;
+		width: 59px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -7.75px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.2px;
+	}
+	#einzahlen {
+		position: absolute;
+		width: 495px;
+		height: 53.389px;
+		left: 1px;
+		top: 59px;
+		overflow: visible;
+	}
+	#Ebene_10 {
+		position: absolute;
+		width: 495px;
+		height: 48px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#VISA_SECURED_bg {
+		left: 34.844px;
+		top: 41.389px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -9.833334922790527px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 8.333330154418945px;
+		color: rgba(126,126,126,1);
+		letter-spacing: 0.2px;
+	}
+	#n_10000_bh {
+		left: 20px;
+		top: 15px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -6.708334922790527px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14.583330154418945px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.2px;
+	}
+	#bankingg_14_bi {
+		fill: #ff0066;
+	}
+	.bankingg_14_bi {
+		position: absolute;
+		overflow: visible;
+		width: 109px;
+		height: 27px;
+		left: 373px;
+		top: 11px;
+	}
+	#Einzahlen_bj {
+		left: 397px;
+		top: 18px;
+		position: absolute;
+		overflow: visible;
+		width: 61px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -7.75px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.2px;
+	}
+	#senden_bk {
+		position: absolute;
+		width: 495px;
+		height: 53.389px;
+		left: 0px;
+		top: 120px;
+		overflow: visible;
+	}
+	#Ebene_11 {
+		position: absolute;
+		width: 495px;
+		height: 48px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#VISA_SECURED_bm {
+		left: 34.844px;
+		top: 41.389px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -9.833334922790527px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 8.333330154418945px;
+		color: rgba(126,126,126,1);
+		letter-spacing: 0.2px;
+	}
+	#n_10000_bn {
+		left: 20px;
+		top: 15px;
+		position: absolute;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -6.708334922790527px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14.583330154418945px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.2px;
+	}
+	#meerbidesign {
+		left: 120px;
+		top: 14px;
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -7.333334922790527px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13.333330154418945px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.2px;
+	}
+	#bankingg_15 {
+		fill: rgba(61,61,61,1);
+	}
+	.bankingg_15 {
+		position: absolute;
+		overflow: visible;
+		width: 2px;
+		height: 26px;
+		left: 101px;
+		top: 11px;
+	}
+	#bankingg_14_bq {
+		fill: #ff0066;
+	}
+	.bankingg_14_bq {
+		position: absolute;
+		overflow: visible;
+		width: 109px;
+		height: 27px;
+		left: 373px;
+		top: 11px;
+	}
+	#berweisen {
+		left: 390px;
+		top: 18px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		white-space: nowrap;
+		line-height: 28px;
+		margin-top: -7.75px;
+		text-align: left;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.2px;
+	}
+	#home {
+		position: absolute;
+		width: 200px;
+		height: 43px;
+		left: 467px;
+		top: 542px;
+		overflow: visible;
+	}
+	#home-bar {
+		position: absolute;
+		width: 200px;
+		height: 43px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#icons {
+		position: absolute;
+		width: 115px;
+		height: 17px;
+		left: 43px;
+		top: 13px;
+		overflow: visible;
+	}
+	#home_bv {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#credit-card {
+		position: absolute;
+		width: 18px;
+		height: 14px;
+		left: 32px;
+		top: 2px;
+		overflow: visible;
+	}
+	#bell {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 66px;
+		top: 1px;
+		overflow: visible;
+	}
+	#sliders {
+		position: absolute;
+		width: 18px;
+		height: 16px;
+		left: 97px;
+		top: 1px;
+		overflow: visible;
+	}
+	textarea:focus, input:focus{
+    outline: none;
+}
+*:focus {
+    outline: none;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  background: rgb(43, 39, 39);
+  margin: 0;
+  border: 0;
+}
+#amount,
+#amountw,
+#amountt,
+#to {
+    background: transparent;
+    outline: none;
+    font-size: 0.7rem;
+    color: #a7a4a4;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: left;
+    width: 250px;
+}
+button{
+	cursor: pointer;
+	border: 0;
+}
+.btn{
+	background-color:#ff0066;
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:12px;
+	margin-left: -32px;
+	padding:5px 25px;
+	text-decoration:none;
+
+}
+.btn:hover{
+	background-color: white;
+	color:#111;
+}
+#x {
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		left: 1086px;
+		top: 30px;
+		overflow: visible;
+	}
+</style>
+<script id="applicationScript" type="text/javascript" src="rescale.js"></script>
+</head>
+<body>
+<div id="Canvas">
+	<div id="banking">
+		<img id="background" src="https://cdn.discordapp.com/attachments/788240573382787114/881263659412766780/background.png">
+
+		<button class="btn-sign-out"><img id="x" src="https://cdn.discordapp.com/attachments/788240573382787114/832521293714030662/x.png"></button>
+			
+		<div id="stats">
+			<img id="card" src="https://media.discordapp.net/attachments/894003960984252456/921118167764459570/card.png">
+				
+			<svg class="punkt-3">
+				<ellipse id="punkt-3" rx="3.5" ry="3.5" cx="3.5" cy="3.5">
+				</ellipse>
+			</svg>
+			<svg class="punkt-2">
+				<ellipse id="punkt-2" rx="3.5" ry="3.5" cx="3.5" cy="3.5">
+				</ellipse>
+			</svg>
+			<svg class="punkt-1">
+				<ellipse id="punkt-1" rx="3.5" ry="3.5" cx="3.5" cy="3.5">
+				</ellipse>
+			</svg>
+			<svg class="line-2">
+				<rect id="line-2" rx="3.5" ry="3.5" x="0" y="0" width="30" height="7">
+				</rect>
+			</svg>
+			<div id="Willkommen_meerbidesign">
+				<span>Willkommen,</span><br/><span class="username1" style="font-size:17.5px;color:rgba(255,255,255,1);">SakuraLife.cc</span>
+			</div>
+			<div id="senden">
+				<svg class="inner">
+					<rect id="inner" rx="10" ry="10" x="0" y="0" width="50" height="50">
+					</rect>
+				</svg>
+				<img id="arrow-right" src="https://media.discordapp.net/attachments/814218631802126346/921118569222262835/arrow-right.png">
+					
+				<div id="Senden_s">
+					<span>Senden</span>
+				</div>
+			</div>
+			<div id="empfangen">
+				<svg class="inner_u">
+					<rect id="inner_u" rx="10" ry="10" x="0" y="0" width="50" height="50">
+					</rect>
+				</svg>
+				<img id="arrow-right_v" src="https://media.discordapp.net/attachments/883065122615099432/921118958206193694/arrow-right_v.png">
+					
+				<div id="Empfangen_w">
+					<span>Empfangen</span>
+				</div>
+			</div>
+			<div id="ubersicht">
+				<svg class="inner_y">
+					<rect id="inner_y" rx="10" ry="10" x="0" y="0" width="50" height="50">
+					</rect>
+				</svg>
+				<div id="bersicht">
+					<span>Übersicht</span>
+				</div>
+				<img id="bar-chart-2" src="https://media.discordapp.net/attachments/814218631802126346/921119174632292352/bar-chart-2.png">
+					
+			</div>
+			<img id="graph" src="https://media.discordapp.net/attachments/894003960984252456/921119628426625104/graph.png">
+				
+			<div id="Kontostand">
+				<span>Kontostand</span>
+			</div>
+			<div id="n__1423512">
+				<span class="money"><span class="curbalance"></span><b><span class="dollars"> $</span>
+			</div>
+			<img id="line" src="https://media.discordapp.net/attachments/894003960984252456/921120305412472902/line.png">
+				
+			<div id="Einkommen">
+				<span>Einkommen</span>
+			</div>
+			<div id="Ausgaben">
+				<span>Ausgaben</span>
+			</div>
+		</div>
+		<div id="control">
+			<form id="withdraw1">
+				<div id="abheben">
+					<img id="Ebene_9" src="https://cdn.discordapp.com/attachments/788240573382787114/881263992352415764/Ebene_9.png">
+						
+					<div id="VISA_SECURED">
+						<span>VISA SECURED</span>
+					</div>
+					<div id="n_10000">
+						<input id="amountw" type="number" placeholder="0 $">
+					</div>
+					<div id="Abheben_bd">
+						<button class="btn btn-green" type="submit">
+						<span>Abheben</span>
+					</div>
+				</div>
+			</form>
+			<form id="deposit1">
+				<div id="einzahlen">
+					<img id="Ebene_10" src="https://cdn.discordapp.com/attachments/788240573382787114/881263992352415764/Ebene_9.png">
+						
+					<div id="VISA_SECURED_bg">
+						<span>VISA SECURED</span>
+					</div>
+					<div id="n_10000_bh">
+						<b><input id="amount" type="number" placeholder="0 $"></b>
+					</div>
+					<div id="Einzahlen_bj">
+						<button class="btn" type="submit">
+						<span>Einzahlen</span>
+					</div>
+				</div>
+			</form>
+			<form id="transfer1">
+				<div id="senden_bk">
+					<img id="Ebene_11" src="https://cdn.discordapp.com/attachments/788240573382787114/881263992352415764/Ebene_9.png">
+						
+					<div id="VISA_SECURED_bm">
+						<span>VISA SECURED</span>
+					</div>
+					<div id="n_10000_bn">
+						<input id="amountt" type="number" placeholder="0 $">
+					</div>
+					<div id="meerbidesign">
+						<input id="to" type="text" placeholder="ID">
+					</div>
+					<svg class="bankingg_15">
+						<rect id="bankingg_15" rx="1" ry="1" x="0" y="0" width="2" height="26">
+						</rect>
+					</svg>
+					<div id="berweisen">
+						<button class="btn" type="submit">
+						<span>Überweisen</span>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div id="home">
+			<img id="home-bar" src="https://media.discordapp.net/attachments/894003960984252456/921121366365831208/home-bar.png">
+				
+			<div id="icons">
+				<img id="home_bv" src="https://cdn.discordapp.com/attachments/894003960984252456/921121543105437726/home_bv.png">
+					
+				<img id="credit-card" src="https://cdn.discordapp.com/attachments/788240573382787114/881264175458963476/credit-card.png">
+					
+				<img id="bell" src="https://cdn.discordapp.com/attachments/788240573382787114/881264223706050590/bell.png">
+					
+				<img id="sliders" src="https://cdn.discordapp.com/attachments/788240573382787114/881264222204473374/sliders.png">
+					
+			</div>
+		</div>
+	</div>
+</div>
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    	<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    	<script type="text/javascript">
+    		$(function() {
+				window.addEventListener('message', function(event) {
+					if (event.data.type === "openGeneral"){
+		                $('body').show();
+					} else if(event.data.type === "balanceHUD") {
+							$('.username1').html(event.data.player);
+							$('.curbalance').html(event.data.balance);
+					} else if (event.data.type === "closeAll"){
+		                $('body').hide();
+					}
+					else if (event.data.type === "result") {
+						if (event.data.t == "success")
+							$("#result").attr('class', 'alert-green');
+						else
+							$("#result").attr('class', 'alert-orange');
+						$("#result").html(event.data.m).show().delay(5000).fadeOut();
+					}
+				});
+			});
+    		$('.btn-sign-out').click(function(){
+	            $('body').hide();
+	            $.post('http://sakura_bank/NUIFocusOff', JSON.stringify({}));
+	        })
+	        $("#deposit1").submit(function(e) {
+		        e.preventDefault(); 
+		        $.post('http://sakura_bank/deposit', JSON.stringify({
+		            amount: $("#amount").val()
+		        }));
+			});
+			$("#transfer1").submit(function(e) {
+		        e.preventDefault(); 
+		        $.post('http://sakura_bank/transfer', JSON.stringify({
+					to: $("#to").val(),
+		            amountt: $("#amountt").val()
+		        }));
+			});
+			$("#withdraw1").submit(function(e) {
+				e.preventDefault(); 
+		        $.post('http://sakura_bank/withdrawl', JSON.stringify({
+		            amountw: $("#amountw").val()
+		        }));
+			});
+			document.onkeyup = function(data){
+		        if (data.which == 27){
+		            $('body').hide();
+		            $.post('http://sakura_bank/NUIFocusOff', JSON.stringify({}));
+		        }
+		    }
+    	</script>
+</body>
+</html>

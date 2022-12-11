@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>by miro#1337</title>
+<style id="applicationStylesheet" type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+	user-select: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+* {
+	font-family: Poppins;
+}
+.water-fill {
+  animation: wave 3s infinite linear, 
+             fill-up 60s ease-out forwards alternate;
+}
+
+@keyframes wave {
+  0% { x: -400px; }
+  100% { x: 0; }
+}
+
+
+@keyframes fill-up {
+  0% {
+    height: 0;
+    y: 160px;
+  }
+  100% {
+    height: 160px;
+    y: 0px;
+  }
+}
+
+button{
+	cursor: pointer;
+	border: 0;
+}
+.btn{
+	background-color:#ff0066;
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family: Poppins;
+	font-size:14px;
+	margin-left: -45px;
+	margin-top:  -10px;
+	padding:8px 60px;
+	text-decoration:none;
+
+}
+.btn:hover{
+	background-color: #121212;
+}
+	.mediaViewInfo {
+		--web-view-name: Canvas;
+		--web-view-id: Canvas;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Canvas;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Canvas {
+		position: absolute;
+		width: 1920px;
+		height: 1080px;
+		background-color: rgba(0,0,0,0);
+		overflow: hidden;
+		--web-view-name: Canvas;
+		--web-view-id: Canvas;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+	}
+	.container {
+		-webkit-animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+		display:  none;
+		position: absolute;
+		width: 975px;
+		height: 533px;
+		left: 473px;
+		top: 274px;
+		overflow: visible;
+	}
+@-webkit-keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+	#Gruppe_22 {
+		position: absolute;
+		width: 975px;
+		height: 533px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#miro_1 {
+		position: absolute;
+		width: 975px;
+		height: 533px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#miro_1_j {
+		fill: rgba(19,19,19,1);
+	}
+	.miro_1_j {
+		position: absolute;
+		overflow: visible;
+		width: 975px;
+		height: 533px;
+		left: 0px;
+		top: 0px;
+	}
+	#Clip {
+		position: absolute;
+		width: 975px;
+		height: 533px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Map {
+		position: absolute;
+		width: 306px;
+		height: 394.86px;
+		left: 31px;
+		top: 87px;
+		overflow: visible;
+	}
+	#Gruppe_23 {
+		position: absolute;
+		width: 82px;
+		height: 61.88px;
+		left: 142px;
+		top: 196px;
+		overflow: visible;
+	}
+	#Polygon_1 {
+		fill: #ff0066;
+	}
+	.Polygon_1 {
+		overflow: visible;
+		position: absolute;
+		width: 29.489px;
+		height: 25.538px;
+		left: 26.967px;
+		top: 17.3px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Ellipse_1 {
+		opacity: 0.22;
+		fill: #ff0066;
+	}
+	.Ellipse_1 {
+		position: absolute;
+		overflow: visible;
+		width: 9.76px;
+		height: 9.76px;
+		left: 37.12px;
+		top: 52.12px;
+	}
+	#Ellipse_1_p {
+		fill: #ff0066;
+	}
+	.Ellipse_1_p {
+		position: absolute;
+		overflow: visible;
+		width: 6px;
+		height: 6px;
+		left: 39px;
+		top: 54px;
+	}
+	#miro_17 {
+		fill: #ff0066;
+	}
+	.miro_17 {
+		position: absolute;
+		overflow: visible;
+		width: 82px;
+		height: 30px;
+		left: 0px;
+		top: 0px;
+	}
+	#gas-pump-solid_4 {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 8px;
+		top: 7px;
+		overflow: visible;
+	}
+	#ID132_ {
+		left: 33.313px;
+		top: 9px;
+		position: absolute;
+		overflow: visible;
+		width: 39px;
+		white-space: nowrap;
+		line-height: 15.000000953674316px;
+		margin-top: -1.2500004768371582px;
+		text-align: center;
+		font-family: Metropolis-Bold;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.5px;
+	}
+	#Gruppe_23_t {
+		position: absolute;
+		width: 82px;
+		height: 57.88px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Polygon_1_u {
+		fill: #ff0066;
+	}
+	.Polygon_1_u {
+		overflow: visible;
+		position: absolute;
+		width: 29.489px;
+		height: 25.538px;
+		left: 26.967px;
+		top: 17.3px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Ellipse_1_v {
+		opacity: 0.22;
+		fill: #ff0066;
+	}
+	.Ellipse_1_v {
+		position: absolute;
+		overflow: visible;
+		width: 9.76px;
+		height: 9.76px;
+		left: 37.12px;
+		top: 48.12px;
+	}
+	#Ellipse_1_w {
+		fill: #ff0066;
+	}
+	.Ellipse_1_w {
+		position: absolute;
+		overflow: visible;
+		width: 6px;
+		height: 6px;
+		left: 39px;
+		top: 50px;
+	}
+	#miro_17_x {
+		fill: #ff0066;
+	}
+	.miro_17_x {
+		position: absolute;
+		overflow: visible;
+		width: 82px;
+		height: 30px;
+		left: 0px;
+		top: 0px;
+	}
+	#gas-pump-solid_4_y {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 8px;
+		top: 7px;
+		overflow: visible;
+	}
+	#ID213_ {
+		left: 33.313px;
+		top: 9px;
+		position: absolute;
+		overflow: visible;
+		width: 39px;
+		white-space: nowrap;
+		line-height: 15.000000953674316px;
+		margin-top: -1.2500004768371582px;
+		text-align: center;
+		font-family: Metropolis-Bold;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.5px;
+	}
+	#Gruppe_23_ {
+		position: absolute;
+		width: 82px;
+		height: 61.88px;
+		left: 224px;
+		top: 107px;
+		overflow: visible;
+	}
+	#Polygon_1_ {
+		fill: #ff0066;
+	}
+	.Polygon_1_ {
+		overflow: visible;
+		position: absolute;
+		width: 29.489px;
+		height: 25.538px;
+		left: 26.967px;
+		top: 17.3px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Ellipse_1_ {
+		opacity: 0.22;
+		fill: #ff0066;
+	}
+	.Ellipse_1_ {
+		position: absolute;
+		overflow: visible;
+		width: 9.76px;
+		height: 9.76px;
+		left: 37.12px;
+		top: 52.12px;
+	}
+	#Ellipse_1_ba {
+		fill: #ff0066;
+	}
+	.Ellipse_1_ba {
+		position: absolute;
+		overflow: visible;
+		width: 6px;
+		height: 6px;
+		left: 39px;
+		top: 54px;
+	}
+	#miro_17_ {
+		fill: #ff0066;
+	}
+	.miro_17_ {
+		position: absolute;
+		overflow: visible;
+		width: 82px;
+		height: 30px;
+		left: 0px;
+		top: 0px;
+	}
+	#gas-pump-solid_4_ {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 8px;
+		top: 7px;
+		overflow: visible;
+	}
+	#ID142_ {
+		left: 32.313px;
+		top: 9px;
+		position: absolute;
+		overflow: visible;
+		width: 41px;
+		white-space: nowrap;
+		line-height: 15.000000953674316px;
+		margin-top: -1.2500004768371582px;
+		text-align: center;
+		font-family: Metropolis-Bold;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.5px;
+	}
+	#Gruppe_23_ba {
+		position: absolute;
+		width: 82px;
+		height: 57.86px;
+		left: 93px;
+		top: 337px;
+		overflow: visible;
+	}
+	#Polygon_1_ba {
+		fill: #ff0066;
+	}
+	.Polygon_1_ba {
+		overflow: visible;
+		position: absolute;
+		width: 29.489px;
+		height: 25.538px;
+		left: 26.967px;
+		top: 17.3px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Ellipse_1_bb {
+		opacity: 0.22;
+		fill: #ff0066;
+	}
+	.Ellipse_1_bb {
+		position: absolute;
+		overflow: visible;
+		width: 9.72px;
+		height: 9.72px;
+		left: 37.14px;
+		top: 48.14px;
+	}
+	#Ellipse_1_bc {
+		fill: #ff0066;
+	}
+	.Ellipse_1_bc {
+		position: absolute;
+		overflow: visible;
+		width: 6px;
+		height: 6px;
+		left: 39px;
+		top: 50px;
+	}
+	#miro_17_bb {
+		fill: #ff0066;
+	}
+	.miro_17_bb {
+		position: absolute;
+		overflow: visible;
+		width: 82px;
+		height: 30px;
+		left: 0px;
+		top: 0px;
+	}
+	#gas-pump-solid_4_bc {
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 8px;
+		top: 7px;
+		overflow: visible;
+	}
+	#ID156_ {
+		left: 32.313px;
+		top: 9px;
+		position: absolute;
+		overflow: visible;
+		width: 41px;
+		white-space: nowrap;
+		line-height: 15.000000953674316px;
+		margin-top: -1.2500004768371582px;
+		text-align: center;
+		font-family: Metropolis-Bold;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.5px;
+	}
+	#logo {
+		position: absolute;
+		width: 127px;
+		height: 39px;
+		left: 620px;
+		top: 21px;
+		overflow: visible;
+	}
+	#V_Logo_Transparent {
+		position: absolute;
+		width: 38px;
+		height: 39px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#miro {
+		left: 46px;
+		top: 10px;
+		position: absolute;
+		overflow: visible;
+		width: 82px;
+		white-space: nowrap;
+		line-height: 20.000003814697266px;
+		margin-top: -1.6666669845581055px;
+		text-align: center;
+		font-family: Poppins-SemiBoldItalic;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16.666669845581055px;
+		color: #ff0066;
+	}
+	#close {
+		position: absolute;
+		width: 25px;
+		height: 25px;
+		left: 927px;
+		top: 24px;
+		overflow: visible;
+	}
+	#miro_4 {
+		fill: #ff0066;
+	}
+	.miro_4 {
+		position: absolute;
+		overflow: visible;
+		width: 25px;
+		height: 25px;
+		left: 0px;
+		top: 0px;
+	}
+	#x_1 {
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 9px;
+		top: 9px;
+		overflow: visible;
+	}
+	#btn {
+		position: absolute;
+		width: 182px;
+		height: 38px;
+		left: 589px;
+		top: 445px;
+		overflow: visible;
+	}
+	#miro_18 {
+		fill: #ff0066;
+	}
+	.miro_18 {
+		position: absolute;
+		overflow: visible;
+		width: 182px;
+		height: 38px;
+		left: 0px;
+		top: 0px;
+	}
+	#TANKEN {
+		left: 57.365px;
+		top: 11px;
+		position: absolute;
+		overflow: visible;
+		width: 67px;
+		white-space: nowrap;
+		line-height: 17.499996185302734px;
+		margin-top: -1.4583330154418945px;
+		text-align: center;
+		font-family: Metropolis-Bold;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14.583330154418945px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.5px;
+	}
+	#main {
+		position: absolute;
+		width: 368px;
+		height: 315px;
+		left: 504px;
+		top: 90px;
+		overflow: visible;
+	}
+	#Gruppe_12 {
+		position: absolute;
+		width: 368px;
+		height: 138px;
+		left: 0px;
+		top: 177px;
+		overflow: visible;
+	}
+	#Gruppe_11 {
+		position: absolute;
+		width: 177px;
+		height: 42px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#miro_11 {
+		opacity: 0.2;
+		fill: rgba(0,0,0,1);
+	}
+	.miro_11 {
+		position: absolute;
+		overflow: visible;
+		width: 177px;
+		height: 42px;
+		left: 0px;
+		top: 0px;
+	}
+	#PREIS_PRO_L {
+		left: 100.329px;
+		top: 15.121px;
+		position: absolute;
+		overflow: visible;
+		width: 53px;
+		white-space: nowrap;
+		line-height: 11.499996185302734px;
+		margin-top: -0.9583330154418945px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 9.583330154418945px;
+		color: rgba(255,255,255,1);
+	}
+	#_122 {
+		left: 46.329px;
+		top: 10px;
+		position: absolute;
+		overflow: visible;
+		width: 49px;
+		white-space: nowrap;
+		line-height: 22.5px;
+		margin-top: -1.875px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: #ff0066;
+	}
+	#money-bill-wave-alt-solid_2 {
+		position: absolute;
+		width: 20px;
+		height: 14px;
+		left: 11px;
+		top: 14px;
+		overflow: visible;
+	}
+	#Gruppe_11_bu {
+		position: absolute;
+		width: 177px;
+		height: 42px;
+		left: 191px;
+		top: 0px;
+		overflow: visible;
+	}
+	#miro_11_bv {
+		opacity: 0.2;
+		fill: rgba(0,0,0,1);
+	}
+	.miro_11_bv {
+		position: absolute;
+		overflow: visible;
+		width: 177px;
+		height: 42px;
+		left: 0px;
+		top: 0px;
+	}
+	#TYP {
+		left: 125.329px;
+		top: 15.121px;
+		position: absolute;
+		overflow: visible;
+		width: 17px;
+		white-space: nowrap;
+		line-height: 11.499996185302734px;
+		margin-top: -0.9583330154418945px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 9.583330154418945px;
+		color: rgba(255,255,255,1);
+	}
+	#BENZIN {
+		left: 57.329px;
+		top: 11px;
+		position: absolute;
+		overflow: visible;
+		width: 63px;
+		white-space: nowrap;
+		line-height: 22.5px;
+		margin-top: -1.875px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: #ff0066;
+	}
+	#gas-pump-solid_5 {
+		position: absolute;
+		width: 18px;
+		height: 18px;
+		left: 15px;
+		top: 13px;
+		overflow: visible;
+	}
+	#Gruppe_11_bz {
+		position: absolute;
+		width: 177px;
+		height: 42px;
+		left: 0px;
+		top: 47px;
+		overflow: visible;
+	}
+	#miro_11_b {
+		opacity: 0.2;
+		fill: rgba(0,0,0,1);
+	}
+	.miro_11_b {
+		position: absolute;
+		overflow: visible;
+		width: 177px;
+		height: 42px;
+		left: 0px;
+		top: 0px;
+	}
+	#AUFGEFLLT {
+		left: 106.329px;
+		top: 15.121px;
+		position: absolute;
+		overflow: visible;
+		width: 55px;
+		white-space: nowrap;
+		line-height: 11.499996185302734px;
+		margin-top: -0.9583330154418945px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 9.583330154418945px;
+		color: rgba(255,255,255,1);
+	}
+	#ID000L {
+		left: 49.329px;
+		top: 10px;
+		position: absolute;
+		overflow: visible;
+		width: 49px;
+		white-space: nowrap;
+		line-height: 22.5px;
+		margin-top: -1.875px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: #ff0066;
+	}
+	#gas-pump-solid_5_b {
+		position: absolute;
+		width: 18px;
+		height: 18px;
+		left: 15px;
+		top: 13px;
+		overflow: visible;
+	}
+	#Gruppe_11_b {
+		position: absolute;
+		width: 177px;
+		height: 42px;
+		left: 191px;
+		top: 47px;
+		overflow: visible;
+	}
+	#miro_11_ca {
+		opacity: 0.2;
+		fill: rgba(0,0,0,1);
+	}
+	.miro_11_ca {
+		position: absolute;
+		overflow: visible;
+		width: 177px;
+		height: 42px;
+		left: 0px;
+		top: 0px;
+	}
+	#TANKVOLUMEN {
+		left: 99.329px;
+		top: 15.121px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 11.499996185302734px;
+		margin-top: -0.9583330154418945px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 9.583330154418945px;
+		color: rgba(255,255,255,1);
+	}
+	#ID10000L {
+		left: 44.329px;
+		top: 13.121px;
+		position: absolute;
+		overflow: visible;
+		width: 51px;
+		white-space: nowrap;
+		line-height: 17.499996185302734px;
+		margin-top: -1.4583330154418945px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14.583330154418945px;
+		color: #ff0066;
+	}
+	#gas-pump-solid_5_ca {
+		position: absolute;
+		width: 18px;
+		height: 18px;
+		left: 15px;
+		top: 13px;
+		overflow: visible;
+	}
+	#Gruppe_11_ca {
+		position: absolute;
+		width: 368px;
+		height: 42px;
+		left: 0px;
+		top: 96px;
+		overflow: visible;
+	}
+	#miro_11_cb {
+		opacity: 0.2;
+		fill: rgba(0,0,0,1);
+	}
+	.miro_11_cb {
+		position: absolute;
+		overflow: visible;
+		width: 368px;
+		height: 42px;
+		left: 0px;
+		top: 0px;
+	}
+	#KOSTEN {
+		left: 209.329px;
+		top: 15.121px;
+		position: absolute;
+		overflow: visible;
+		width: 37px;
+		white-space: nowrap;
+		line-height: 11.499996185302734px;
+		margin-top: -0.9583330154418945px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 9.583330154418945px;
+		color: rgba(255,255,255,1);
+	}
+	#_132122 {
+		left: 124.329px;
+		top: 11px;
+		position: absolute;
+		overflow: visible;
+		width: 81px;
+		white-space: nowrap;
+		line-height: 22.5px;
+		margin-top: -1.875px;
+		text-align: center;
+		font-family: Poppins-Regular;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 17px;
+		color: #ff0066;
+	}
+	#money-bill-wave-alt-solid_2_cd {
+		position: absolute;
+		width: 20px;
+		height: 14px;
+		left: 11px;
+		top: 14px;
+		overflow: visible;
+	}
+	#Gruppe_24 {
+		position: absolute;
+		width: 140px;
+		height: 140px;
+		left: 106px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Ebene_7 {
+		position: absolute;
+		width: 140px;
+		height: 140px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Ebene_7_cg {
+		position: absolute;
+		width: 140px;
+		height: 140px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#Clip_ch {
+		position: absolute;
+		width: 140px;
+		height: 140px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#AKTUELLES__TANKVOULMEN___52L10 {
+		position: absolute;
+		width: 68px;
+		height: 66px;
+		left: 34.384px;
+		top: 21px;
+		overflow: visible;
+	}
+	#AKTUELLES__TANKVOULMEN___52L10_cj {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		line-height: 14.40000057220459px;
+		margin-top: -3.200000286102295px;
+		text-align: center;
+		font-family: Metropolis-Bold;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 8px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.5px;
+	}
+	#Color_Overlay {
+		fill: rgba(199,199,199,1);
+	}
+	.Color_Overlay {
+		overflow: visible;
+		position: absolute;
+		width: 67.08px;
+		height: 64.08px;
+		left: 0.292px;
+		top: 0.408px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+</style>
+<script id="applicationScript" type="text/javascript" src="rescale.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<div id="Canvas">
+	<div class="container">
+		<div id="Gruppe_22">
+			<div id="miro_1">
+				<svg class="miro_1_j">
+					<rect id="miro_1_j" rx="15" ry="15" x="0" y="0" width="975" height="533">
+					</rect>
+				</svg>
+				<img id="Clip" src="https://media.discordapp.net/attachments/922653476092268605/928549330015649792/Clip.png">
+					
+				</svg>
+			</div>
+			<div id="Map">
+				<div id="Gruppe_23">
+					<svg class="Polygon_1" viewBox="672.967 574.3 29.489 25.538">
+						<path id="Polygon_1" d="M 687.7114868164063 599.838623046875 L 672.9669799804688 574.3001708984375 L 702.4561157226563 574.3001708984375 L 687.7114868164063 599.838623046875 Z">
+						</path>
+					</svg>
+					<svg class="Ellipse_1">
+						<ellipse id="Ellipse_1" rx="4.880000114440918" ry="4.880000114440918" cx="4.880000114440918" cy="4.880000114440918">
+						</ellipse>
+					</svg>
+					<svg class="Ellipse_1_p">
+						<ellipse id="Ellipse_1_p" rx="3" ry="3" cx="3" cy="3">
+						</ellipse>
+					</svg>
+					<svg class="miro_17">
+						<rect id="miro_17" rx="5" ry="5" x="0" y="0" width="82" height="30">
+						</rect>
+					</svg>
+					<img id="gas-pump-solid_4" src="https://cdn.discordapp.com/attachments/788240573382787114/859157375105630229/gas-pump-solid_4.png">
+						
+					<div id="ID132_">
+						<span>1.32 $</span>
+					</div>
+				</div>
+				<div id="Gruppe_23_t">
+					<svg class="Polygon_1_u" viewBox="530.967 378.3 29.489 25.538">
+						<path id="Polygon_1_u" d="M 545.7114868164063 403.8385925292969 L 530.9669189453125 378.3002014160156 L 560.4561157226563 378.3002014160156 L 545.7114868164063 403.8385925292969 Z">
+						</path>
+					</svg>
+					<svg class="Ellipse_1_v">
+						<ellipse id="Ellipse_1_v" rx="4.880000114440918" ry="4.880000114440918" cx="4.880000114440918" cy="4.880000114440918">
+						</ellipse>
+					</svg>
+					<svg class="Ellipse_1_w">
+						<ellipse id="Ellipse_1_w" rx="3" ry="3" cx="3" cy="3">
+						</ellipse>
+					</svg>
+					<svg class="miro_17_x">
+						<rect id="miro_17_x" rx="5" ry="5" x="0" y="0" width="82" height="30">
+						</rect>
+					</svg>
+					<img id="gas-pump-solid_4_y" src="https://cdn.discordapp.com/attachments/788240573382787114/859157375105630229/gas-pump-solid_4.png">
+						
+					<div id="ID213_">
+						<span>2.13 $</span>
+					</div>
+				</div>
+				<div id="Gruppe_23_">
+					<svg class="Polygon_1_" viewBox="754.967 485.3 29.489 25.538">
+						<path id="Polygon_1_" d="M 769.7114868164063 510.8385925292969 L 754.9669799804688 485.3002014160156 L 784.4561157226563 485.3002014160156 L 769.7114868164063 510.8385925292969 Z">
+						</path>
+					</svg>
+					<svg class="Ellipse_1_">
+						<ellipse id="Ellipse_1_" rx="4.880000114440918" ry="4.880000114440918" cx="4.880000114440918" cy="4.880000114440918">
+						</ellipse>
+					</svg>
+					<svg class="Ellipse_1_ba">
+						<ellipse id="Ellipse_1_ba" rx="3" ry="3" cx="3" cy="3">
+						</ellipse>
+					</svg>
+					<svg class="miro_17_">
+						<rect id="miro_17_" rx="5" ry="5" x="0" y="0" width="82" height="30">
+						</rect>
+					</svg>
+					<img id="gas-pump-solid_4_" src="https://cdn.discordapp.com/attachments/788240573382787114/859157375105630229/gas-pump-solid_4.png">
+						
+					<div id="ID142_">
+						<span>1.42 $</span>
+					</div>
+				</div>
+				<div id="Gruppe_23_ba">
+					<svg class="Polygon_1_ba" viewBox="623.967 715.3 29.489 25.538">
+						<path id="Polygon_1_ba" d="M 638.7116088867188 740.838623046875 L 623.9669799804688 715.3001708984375 L 653.4561767578125 715.3001708984375 L 638.7116088867188 740.838623046875 Z">
+						</path>
+					</svg>
+					<svg class="Ellipse_1_bb">
+						<ellipse id="Ellipse_1_bb" rx="4.860000133514404" ry="4.860000133514404" cx="4.860000133514404" cy="4.860000133514404">
+						</ellipse>
+					</svg>
+					<svg class="Ellipse_1_bc">
+						<ellipse id="Ellipse_1_bc" rx="3" ry="3" cx="3" cy="3">
+						</ellipse>
+					</svg>
+					<svg class="miro_17_bb">
+						<rect id="miro_17_bb" rx="5" ry="5" x="0" y="0" width="82" height="30">
+						</rect>
+					</svg>
+					<img id="gas-pump-solid_4_bc" src="https://cdn.discordapp.com/attachments/788240573382787114/859157375105630229/gas-pump-solid_4.png">
+						
+					<div id="ID156_">
+						<span>1.56 $</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="logo">
+			<img id="V_Logo_Transparent" src="https://media.discordapp.net/attachments/919822070941118514/920112713068343337/LOGOTRANSPARENT_Animation.gif">
+				
+			<div id="miro">
+				<span>SakuraLife</span>
+			</div>
+		</div>
+		<div id="x">
+			<div id="close">
+				<svg class="miro_4">
+					<rect id="miro_4" rx="5" ry="5" x="0" y="0" width="25" height="25">
+					</rect>
+				</svg>
+				<img id="x_1" src="https://cdn.discordapp.com/attachments/788240573382787114/859157114827964417/x_1.png">
+					
+			</div>
+		</div>
+		<div id="btn">
+			<div id="TANKEN">
+				<button class="btn" onclick="tanken()">
+				<span>Tanken</span>
+				</button>
+			</div>
+		</div>
+		<div id="main">
+			<div id="Gruppe_12">
+				<div id="Gruppe_11">
+					<svg class="miro_11">
+						<rect id="miro_11" rx="5" ry="5" x="0" y="0" width="177" height="42">
+						</rect>
+					</svg>
+					<div id="PREIS_PRO_L">
+						<span>PREIS PRO L</span>
+					</div>
+					<div id="_122">
+						<p id="tankpreis">0.00 $</p>
+					</div>
+					<img id="money-bill-wave-alt-solid_2" src="https://media.discordapp.net/attachments/922653476092268605/928548604954701884/money-bill-wave-alt-solid_2.png">
+						
+				</div>
+				<div id="Gruppe_11_bu">
+					<svg class="miro_11_bv">
+						<rect id="miro_11_bv" rx="5" ry="5" x="0" y="0" width="177" height="42">
+						</rect>
+					</svg>
+					<div id="TYP">
+						<span>TYP</span>
+					</div>
+					<div id="BENZIN">
+						<span>BENZIN</span>
+					</div>
+					<img id="gas-pump-solid_5" src="https://media.discordapp.net/attachments/922653476092268605/928548738195128340/gas-pump-solid_5.png">
+						
+				</div>
+				<div id="Gruppe_11_bz">
+					<svg class="miro_11_b">
+						<rect id="miro_11_b" rx="5" ry="5" x="0" y="0" width="177" height="42">
+						</rect>
+					</svg>
+					<div id="AUFGEFLLT">
+						<span>AUFGEFÜLLT</span>
+					</div>
+					<div id="ID000L">
+						<p id="compfuel" id="value1" class="value1">0.00 L</p>
+					</div>
+					<img id="gas-pump-solid_5_b" src="https://media.discordapp.net/attachments/922653476092268605/928548738195128340/gas-pump-solid_5.png">
+						
+				</div>
+				<div id="Gruppe_11_b">
+					<svg class="miro_11_ca">
+						<rect id="miro_11_ca" rx="5" ry="5" x="0" y="0" width="177" height="42">
+						</rect>
+					</svg>
+					<div id="TANKVOLUMEN">
+						<span>TANKVOLUMEN</span>
+					</div>
+					<div id="ID10000L">
+						<p id="value3" class="value3">100.0L</p>
+					</div>
+					<img id="gas-pump-solid_5_ca" src="https://media.discordapp.net/attachments/922653476092268605/928548738195128340/gas-pump-solid_5.png">
+						
+				</div>
+				<div id="Gruppe_11_ca">
+					<svg class="miro_11_cb">
+						<rect id="miro_11_cb" rx="5" ry="5" x="0" y="0" width="368" height="42">
+						</rect>
+					</svg>
+					<div id="KOSTEN">
+						<span>KOSTEN</span>
+					</div>
+					<div id="_132122">
+						<p id="price" id="value4" class="value4">0.00 $</p>
+					</div>
+					<img id="money-bill-wave-alt-solid_2_cd" src="https://media.discordapp.net/attachments/922653476092268605/928548604954701884/money-bill-wave-alt-solid_2.png">
+						
+				</div>
+			</div>
+			<div id="Gruppe_24">
+				<div id="Ebene_7">
+					<div class="splash">
+				<svg height="160" width="160">
+					<pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
+      				<path fill="#ff0066" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"/>
+    				</pattern>
+    				<mask id="tankencircle">
+  						<circle cx="70" cy="70" r="70" fill="#ffffff"/>
+  					</mask>
+  					<rect class="water-fill" mask="url(#tankencircle)" fill="url(#water)" x="-400" y="0" width="1600" height="120"/>
+				</svg>	
+					
+				</svg>
+				</div>
+				<div id="AKTUELLES__TANKVOULMEN___52L10">
+					<div id="AKTUELLES__TANKVOULMEN___52L10_cj">
+						<span>AKTUELLES </span><br><span>TANKVOULMEN</span><br><span></span><br><span style="font-size:12px;"></span><br><p id="currentfuel" id="value2" class="value2" style="font-size:12px;">52L/100L</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    <script>
+        var clicked = false;
+
+        $(document).ready(function(){
+            window.addEventListener('message', function( event ) {      
+                if (event.data.action == 'open') {
+                    $('.container').css('display', 'block');  
+                } else if (event.data.action == 'price') {
+                    $('#price').html(event.data.price);
+                } else if (event.data.action == 'currentfuel') {
+                    $('#currentfuel').html(event.data.currentfuel + " L");
+                } else if (event.data.action == 'compfuel') {
+                    if(compfuel >= 100) {
+                        tanken();
+                    }
+                    $('#compfuel').html(event.data.compfuel + " L");
+                } else if (event.data.action == 'tankpreis') {
+                    $('#tankpreis').html(event.data.tankpreis + " $");
+                }
+            });
+
+            document.addEventListener('keydown', close);
+            document.addEventListener('keyup', (e) => {
+                if(e.which == 13) {
+                    if(clicked == true) {
+                        tanken();
+                    }
+                }
+            });
+
+            function close(e) {
+                if(e.which == 27 && clicked == false) {
+                    $.post('http://sakura_newtanke/escape', JSON.stringify({}));  
+                    $('.container').css('display', 'none');
+                } else if(e.which == 13) {
+                    if(clicked == false) {
+                        tanken();
+                    }
+                }
+            }
+        });
+        	$('#x').click(function(){
+	            $('.container').css('display', 'none');
+	            $.post('http://sakura_newtanke/escape', JSON.stringify({})); 
+	        })
+
+        function tanken() {
+            if(clicked) {
+            	$('.splash').hide();  
+                clicked = false;
+                $.post('http://sakura_newtanke/unfuel');
+            } else {
+                $('.splash').show();   
+                clicked = true;
+                $.post('http://sakura_newtanke/refuel');
+            }
+        }
+    </script>
+</body>
+</html>

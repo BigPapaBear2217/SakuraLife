@@ -1,0 +1,19 @@
+Locales['fr'] = {
+	['valid_this_purchase'] = 'Einkauf bestätigen?',
+  	['yes_valid_purchase'] = 'Ja %s$ zahlen',
+	['yes'] = 'ja',
+	['no'] = 'nein',
+	['name_outfit'] = 'Outfit Name?',
+	['not_enough_money'] = 'Du hast nicht genug Geld',
+	['press_menu'] = 'Drücke ~INPUT_CONTEXT~ um das Menü zu öffnen',
+	['clothes'] = 'Kleidung',
+	['you_paid'] = 'Du bezahlst $',
+	['save_in_dressing'] = 'Möchtest du deinem Outfit einen Namen geben?',
+	['shop_clothes'] = 'Kleidungsladen',
+	['player_clothes'] = 'Outfit auswählen',
+	['shop_main_menu'] = 'Willkommen',
+	['saved_outfit'] = 'Dein Outfit wurde gespeichert',
+	['loaded_outfit'] = 'Du hast dich erfolgreich umgezogen',
+	['suppr_cloth'] = 'Outfits löschen',
+	['supprimed_cloth'] = 'Dein Outfit wurde erfolgreich entfernt'
+}

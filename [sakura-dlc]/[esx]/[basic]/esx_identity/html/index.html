@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<link href="style.css" rel="stylesheet" type="text/css" />
+		<link href="checkbox.css" rel="stylesheet" type="text/css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body style="font-family: 'Poppins', sans-serif ;">
+		<div class="dialog">
+			<form id="register">
+				<img
+					class="logooo"
+					src="https://media.discordapp.net/attachments/894003960984252456/919786122673016872/test3.png?width=672&height=676"
+					width="95"
+					height="95"
+					style="margin-left: 160px"
+				/>
+
+				<input id="firstname" type="text" placeholder="Vorname" /><br />
+				<input id="lastname" type="text" placeholder="Nachname" /><br />
+				<input
+					id="dateofbirth"
+					type="text"
+					placeholder="Geburtsdatum (MM-DD-YYYY)"
+				/><br />
+				<input
+					id="height"
+					type="text"
+					placeholder="Height (140-200 cm)"
+				/><br />
+				<br />
+				<div class="control-group">
+					<label
+						class="control control-checkbox"
+						style="color: white"
+					>
+						Männlich
+						<input id="m" type="checkbox" value="m" checked />
+						<div class="control_indicator"></div>
+					</label>
+					<label
+						class="control control-checkbox"
+						style="color: white"
+					>
+						Weiblich
+						<input id="f" type="checkbox" value="f" />
+						<div class="control_indicator"></div>
+					</label>
+				</div>
+
+				<br />
+				<button id="submit" type="submit" onclick="submit()">
+					Einreisen
+				</button>
+			</form>
+		</div>
+		<script src="script.js" type="text/javascript"></script>
+	</body>
+</html>

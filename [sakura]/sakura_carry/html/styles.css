@@ -1,0 +1,329 @@
+@import url('https://kit-pro.fontawesome.com/releases/v5.11.2/css/pro.min.css');
+
+@font-face {
+  font-family: BebasNeueBold;
+  src: url(BebasNeueBold.ttf);
+}
+
+*{
+	user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+*{
+	user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+html {
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body{
+	display: none;
+	color: #a8a8aa;
+}
+
+.carrytype1 {
+	background-color: rgba(0, 0, 0, 1);
+	border: 2px solid #ff66ff;
+	width: 25%;
+	height: 60%;
+	margin: 0;
+	position: absolute;
+	top: 60%;
+	left: 18%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;  
+	padding: 1.7%;
+}
+
+.carrytype1 img {
+	position: absolute;
+	width: 65%;
+	height: 65%;
+	left: 50%;
+	top: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	z-index: 9999999;
+}
+
+.carry1select {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border: 2px solid #ff66ff;
+	color: #ffffff;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 8px;
+	padding-right: 8px;
+	text-decoration: none;
+	text-align: center;
+	left: 50%;
+	top: 90%;	
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+}
+
+.carry1select:hover {
+	cursor: pointer;
+	background: #ff66ff;
+	text-decoration: none;
+}
+
+.carrytype2 {
+	background-color: rgba(0, 0, 0, 1);
+	border: 2px solid #ff66ff;
+	width: 25%;
+	height: 60%;
+	margin: 0;
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;  
+	padding: 1.7%;
+}
+
+.carrytype2 img {
+	position: absolute;
+	width: 65%;
+	height: 65%;
+	left: 50%;
+	top: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	z-index: 9999999;
+}
+
+.carry2select {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border: 2px solid #ff66ff;
+	color: #ffffff;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 8px;
+	padding-right: 8px;
+	text-decoration: none;
+	text-align: center;
+	left: 50%;
+	top: 90%;	
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+}
+
+.carry2select:hover {
+	cursor: pointer;
+	background: #ff66ff;
+	text-decoration: none;
+}
+
+.carrytype3 {
+	background-color: rgba(0, 0, 0, 1);
+	border: 2px solid #ff66ff;
+	width: 25%;
+	height: 60%;
+	margin: 0;
+	position: absolute;
+	top: 60%;
+	left: 82%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;  
+	padding: 1.7%;
+}
+
+.carrytype3 img {
+	position: absolute;
+	width: 65%;
+	height: 65%;
+	left: 50%;
+	top: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);	
+	z-index: 9999999;
+}
+
+.carry3select {
+	position: absolute;
+	margin: 0;
+	background-color: rgba(0, 0, 0, 1);
+	border: 2px solid #ff66ff;
+	color: #ffffff;
+	font-size: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 8px;
+	padding-right: 8px;
+	text-decoration: none;
+	text-align: center;
+	left: 50%;
+	top: 90%;	
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+}
+
+.carry3select:hover {
+	cursor: pointer;
+	background: #ff66ff;
+	text-decoration: none;
+}
+
+.carrytextheader {
+	padding-top: 10px;
+	font-size: 35px;
+	color: #ff66ff;
+	text-align:center;
+}
+
+.carrytextkey {
+	padding-bottom: 10px;
+	font-size: 35px;
+	color: #ffffff;
+	text-align:center;
+}
+
+.carrytextmain {
+	font-size: 30px;
+	color: #ffffff;
+	text-align:center;
+}
+
+h4{
+	text-align:center;
+	margin-top: 20px;
+	margin-bottom: 0;
+}
+
+button:focus,
+input:focus {
+  outline:0;
+}
+
+.container {
+	color: #ffffff;
+	font-size: 30px;
+}
+
+.full-screen {
+  width: 100%;
+  height:100%;
+  display: flex;
+  align-items: center;
+}
+
+.btnQuit {
+	width:100%;
+}
+
+.closetypemenu {
+	position: absolute;
+	left: 98%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	top: 3.5%
+}
+
+.carry-container {
+	width: 25%;
+	background-color: rgba(0, 0, 0, 0.70);
+	border: 1px solid #ff66ff;
+	margin: 0;
+	position: absolute;
+	top: 85%;
+	left: 85%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	padding: 10px;
+	z-index: 9999999;
+}
+
+.carrytype-container {
+	width: 70%;
+	height: 50%;
+	background-color: rgba(0, 0, 0, 0.70);
+	border: 3px solid #ff66ff;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+	padding-bottom:7%;
+}
+
+.CarryTypeMenuHeaderText {
+	position: absolute;
+	margin: 0;
+	font-size: 50px;
+	color: #ffffff;
+	text-align: center;
+	top: 12.5%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	z-index: 9999999;
+}
+
+.header {
+  width:100%;
+  height: 25%;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-bottom:12%;
+}
+
+.btnQuit {
+	width:100%;
+}
+
+.closetypemenu {
+	position: absolute;
+	left: 97.5%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	top: 5%
+}
+
+.body {
+	overflow: auto;
+	width: 100%;
+	height: 90%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	font-family: BebasNeueBold;
+}
+
+*{
+	font-family: BebasNeueBold;
+}

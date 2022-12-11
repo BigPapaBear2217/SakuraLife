@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: "Sen", sans-serif;
+  text-rendering: optimizeLegibility;
+  font-smooth: auto;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  width: 500px;
+  height: 312px;
+  background-image: url(./assets/images/scratchcard.png);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  opacity: 0.98;
+}
+
+#area {
+  display: flex;
+  position: relative;
+  top: 22px;
+}
+
+#area canvas {
+  border-radius: 5px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 183px;
+  background-color: rgb(68, 68, 68);
+  border-radius: 5px;
+  padding: 10px;
+  padding-bottom: 30px;
+}
+
+#grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 5px 60px;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(3, auto);
+}
+
+.box {
+  display: flex;
+  font-size: 16pt;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border: 2px solid rgb(43, 145, 228);
+  background-color: rgb(36, 36, 36);
+  box-shadow: 1px 1px black;
+}
+
+#prize {
+  position: absolute;
+  bottom: 1px;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.blue {
+  color: rgb(43, 145, 228);
+}
+
+#closeBtn {
+  position: absolute;
+  right: 1%;
+  top: 1%;
+  color: white;
+  z-index: 100;
+  font-size: 18pt;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-shadow: 1px 1px black;
+  transition: 250ms;
+  font-weight: bolder;
+}
+
+#closeBtn:hover {
+  background-color: rgb(43, 145, 228);
+  border-radius: 10px;
+}

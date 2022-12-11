@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style id="applicationStylesheet" type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+	.mediaViewInfo {
+		--web-view-name: Canvas;
+		--web-view-id: Canvas;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Canvas;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Canvas {
+		position: absolute;
+		width: 1920px;
+		height: 1080px;
+		
+		
+		overflow: hidden;
+		--web-view-name: Canvas;
+		--web-view-id: Canvas;
+		--web-scale-to-fit: true;
+		--web-scale-to-fit-type: width;
+		--web-enable-scale-up: true;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-enable-deep-linking: true;
+	}
+	#box {
+		position: absolute;
+		width: 476px;
+		height: 454px;
+		left: 722px;
+		top: 313px;
+		border-top: 5px solid #ff0066;
+		background-color: #202020;
+		border-radius: 15px;
+		overflow: visible;
+	}
+	#Gruppe_1 {
+		position: absolute;
+		width: 476px;
+		height: 454px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#lifev_7 {
+		position: absolute;
+		width: 476px;
+		height: 454px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#lifev_7_j {
+		fill: rgba(33,33,33,1);
+	}
+	.lifev_7_j {
+		position: absolute;
+		overflow: visible;
+		width: 476px;
+		height: 454px;
+		left: 0px;
+		top: 0px;
+	}
+	#Clip {
+		position: absolute;
+		width: 476px;
+		height: 454px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#header {
+		position: absolute;
+	   height: 30px;
+		left: 157px;
+		top: 17px;
+		overflow: visible;
+	}
+	#headertext {
+		position: absolute;
+	   height: 30px;
+		color: #fff;
+	
+		left: 207px;
+		font-size:13px;
+		font-weight: 700;
+		font-family: Poppins;
+		top: 23px;
+		overflow: visible;
+	}
+	#Gruppe_3 {
+		position: absolute;
+		width: 306px;
+		height: 254px;
+		left: 85px;
+		top: 119px;
+		overflow: visible;
+	}
+	#buttns {
+		position: absolute;
+		width: 306px;
+		height: 33px;
+		left: 0px;
+		top: 221px;
+		overflow: visible;
+	}
+	#btn {
+		position: absolute;
+		width: 147px;
+		height: 33px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#lifev_6_q {
+		fill: url(#lifev_6_q);
+	}
+	.lifev_6_q {
+		position: absolute;
+		overflow: visible;
+		width: 147px;
+		height: 33px;
+		left: 0px;
+		top: 0px;
+	}
+	#Besttigen {
+		left: 33px;
+		top: 10px;
+		position: absolute;
+		overflow: visible;
+		width: 79px;
+		white-space: nowrap;
+		line-height: 17.499996185302734px;
+		margin-top: -1.4583330154418945px;
+		text-align: center;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14.583330154418945px;
+		color: rgba(255,255,255,1);
+	}
+	#btn_s {
+		position: absolute;
+		width: 147px;
+		height: 33px;
+		left: 159px;
+		top: 0px;
+		overflow: visible;
+	}
+	#lifev_6_u {
+		fill: url(#lifev_6_u);
+	}
+	.lifev_6_u {
+		position: absolute;
+		overflow: visible;
+		width: 147px;
+		height: 33px;
+		left: 0px;
+		top: 0px;
+	}
+	#Abbrechen {
+		left: 32px;
+		top: 10px;
+		position: absolute;
+		overflow: visible;
+		width: 81px;
+		white-space: nowrap;
+		line-height: 17.499996185302734px;
+		margin-top: -1.4583330154418945px;
+		text-align: center;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14.583330154418945px;
+		color: rgba(255,255,255,1);
+	}
+	#Hier_kannst_du_deinen_Namen_nd {
+		left: 15px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 277px;
+		white-space: nowrap;
+		line-height: 17.499996185302734px;
+		margin-top: -1.4583330154418945px;
+		text-align: center;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14.583330154418945px;
+		color: rgba(255,255,255,1);
+	}
+	#Gruppe_2 {
+		position: absolute;
+		width: 212px;
+		height: 30px;
+		left: 47px;
+		top: 59px;
+		overflow: visible;
+	}
+	#lifev_8 {
+		fill: rgba(0,0,0,0.102);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1.25px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.lifev_8 {
+		position: absolute;
+		overflow: visible;
+		width: 212px;
+		height: 30px;
+		left: 0px;
+		top: 50px;
+	}
+
+	#lifev_9 {
+		fill: rgba(0,0,0,0.102);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1.25px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.lifev_9 {
+		position: absolute;
+		overflow: visible;
+		width: 212px;
+		height: 30px;
+		left: 0px;
+		top: 0px;
+	}
+
+
+
+
+	#Gruppe_2_ {
+		position: absolute;
+		width: 212px;
+		height: 30px;
+		left: 47px;
+		top: 105px;
+		overflow: visible;
+	}
+	#lifev_8_ {
+		fill: rgba(0,0,0,0.102);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1.25px;
+		stroke-linejoin: round;
+		stroke-linecap: round;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.lifev_8_ {
+		position: absolute;
+		overflow: visible;
+		width: 212px;
+		height: 30px;
+		left: 0px;
+		top: 0px;
+	}
+	#Nachname {
+		left: 8px;
+		top: 60px;
+		position: absolute;
+		overflow: visible;
+		width: 71px;
+		white-space: nowrap;
+		line-height: 15.000000953674316px;
+		margin-top: -1.2500004768371582px;
+		text-align: center;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgba(255,255,255,1);
+	}
+	#Vorname {
+		left: 8px;
+		top: 7px;
+		position: absolute;
+		overflow: visible;
+		width: 71px;
+		white-space: nowrap;
+		line-height: 15.000000953674316px;
+		margin-top: -1.2500004768371582px;
+		text-align: center;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgba(255,255,255,1);
+	}
+	#Kosten_500000 {
+		left: 45px;
+		top: 166px;
+		position: absolute;
+		overflow: visible;
+		width: 105px;
+		white-space: nowrap;
+		line-height: 15.000000953674316px;
+		margin-top: -1.2500004768371582px;
+		text-align: center;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12.5px;
+		color: rgba(255,255,255,1);
+	}
+#firstnameinput {
+    
+    outline: none;
+    margin-top: 50px;
+    height: 30px;
+    width: 200px;
+    border-radius: 3px;
+    background-color: transparent;
+    color: #ababab;
+    font-size: 11.5px;
+    font-family: Poppins;
+}
+
+ #lastnameinput {
+    outline: none;
+    margin-top: -10px;
+    height: 30px;
+    width: 200px;
+    background-color: transparent;
+    color: #ababab;
+    font-size: 11.5px;
+    font-family: Poppins;
+ }
+
+ #firstnameinput {
+    outline: none;
+    margin-top: -10px;
+    height: 30px;
+    width: 200px;
+    background-color: transparent;
+    color: #ababab;
+    font-size: 11.5px;
+    font-family: Poppins;
+ }
+
+
+ #cancel {
+    transition: 500ms;
+    top: -15px;
+    margin-left: -20px;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    padding: 0 20px;
+    min-width: 114px;
+    height: 30px;
+    font-family: Poppins;
+    opacity: 0.9;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #252525;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#cancel:focus {
+    outline: 20px;
+}
+
+#cancel:hover {
+    transition: 500ms;
+    background-color: #9d1010;
+    
+}
+
+
+#submit {
+    transition: 500ms;
+    top: -15px;
+    margin-left: 0px;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    padding: 0 20px;
+    min-width: 114px;
+    height: 30px;
+    font-family: Poppins;
+    opacity: 0.9;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    background:linear-gradient(150deg, #ff0066 0%, #ff0066  100%);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    transition: 500ms;
+    background:linear-gradient(150deg, #ff0066  0%, #ff0066 100%);
+}
+
+#submit:focus {
+    outline: none;
+}
+
+.fastbutton {
+    transition: 500ms;
+   
+    margin:5px;
+ 
+    border: none;
+    border-radius: 4px;
+    padding-left: 6px;
+    margin-top: 60px;
+    height: 30px;
+	 width: 90px;
+    font-family: Poppins;
+    opacity: 0.9;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    background:linear-gradient(150deg, #ff0066 0%, #ff0066 100%);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.fastbutton:hover {
+    transition: 500ms;
+    background:linear-gradient(150deg, #ff0066  0%, #ff0066 100%);
+}
+
+.fastbutton:focus {
+    outline: none;
+}
+
+
+</style>
+<script id="applicationScript" type="text/javascript" src="rescale.js"></script>
+</head>
+<body>
+<div id="Canvas">
+	<div id="box">
+		<div id="Gruppe_1">
+			<div id="lifev_7">
+				<svg class="lifev_7_j">
+					<rect id="lifev_7_j" rx="20" ry="20" x="0" y="0" width="476" height="454">
+					</rect>
+				</svg>
+			
+					
+				</svg>
+			</div>
+		</div>
+		<img id="header" src="https://media.discordapp.net/attachments/919822070941118514/920112713068343337/LOGOTRANSPARENT_Animation.gif">
+
+
+		<span id="headertext">Geldwäsche</span>
+			
+		<div id="Gruppe_3">
+			<div id="buttns">
+				<div id="btn">
+					<div id="Besttigen">
+						<button id="submit">Waschen</button>
+					</div>
+				</div>
+				<div id="btn_s">
+					<div id="Abbrechen">
+						<button id="cancel">Abbrechen</button>
+					</div>
+				</div>
+			</div>
+			<div id="Hier_kannst_du_deinen_Namen_nd">
+				<span>Gebe die Menge an die du waschen möchtest</span>
+			</div>
+			<div id="Gruppe_2">
+
+				
+
+				<svg class="lifev_9">
+					<rect id="lifev_9" rx="5" ry="5" x="0" y="0" width="212" height="30">
+					</rect>
+				</svg>
+
+					
+				<div id="Vorname">
+					<input type="number"  maxlength='10' id="firstnameinput" placeholder="Menge">
+				</div>
+
+			
+				<div style="left: 200px">
+					<button class="fastbutton" id="100000">100.000$</button><button class="fastbutton" id="1000000">1.000.000$</button>
+				</div>
+
+
+			</div>
+		
+			<div id="Kosten_500000">
+				<span></span><p class="kosten" style="color:rgba(255,0,0,1);">Bei uns ist dein Geld sicher <br>
+					 wir waschen dein Geld mit feinster Sorgfalt </p>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<script src="index.js"></script>
+
+
+
+</body>
+</html>

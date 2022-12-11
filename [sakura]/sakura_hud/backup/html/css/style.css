@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+:root {
+    --mic-color: #353535;
+    --funk-color: #353535;
+    --walkie-talkie: #fff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: block;
+    /* background-color: rgb(107, 107, 107); */
+}
+
+#ui {
+    float: right;
+    margin-top: 3.9%;
+}
+
+
+/* STATUS */
+
+.hud {
+    height: 48px;
+    background: rgba(0, 0, 0, 0.664);
+    color: white;
+    border-radius: 5px 0 0 5px;
+    padding: 0 0 0 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hud-label {
+    margin: 0.325rem;
+}
+
+.logo-container {
+    --img-size: 34px;
+    height: 64px;
+    width: var(--img-size);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.limg {
+    transform: scale(0.03);
+}
+
+.icon-voice {
+    color: var(--mic-color);
+}
+
+.voice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.voice-range {
+    margin-left: 5px;
+}
+
+.level-1,
+.level-2,
+.level-3 {
+    width: 10px;
+    height: 10px;
+    background-color: #F7A2F3;
+    display: inline-block;
+    align-items: center;
+    border-radius: 50px;
+    margin-left: 5px;
+}
+
+.icon-funk {
+    color: var(--funk-color);
+}
+
+
+/* MONEY */
+
+.money {
+    display: flex;
+    height: 48px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#geld {
+    margin: 0 0.5rem;
+    font-family: 'Poppins', monospace;
+}

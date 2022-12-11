@@ -1,0 +1,15 @@
+
+
+
+
+
+.test{
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 174px;
+    left: 95%;
+    top: 91%;
+    border-radius: 50px;
+
+}
